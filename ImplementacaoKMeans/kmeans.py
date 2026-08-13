@@ -46,7 +46,7 @@ class KMeans:
             clusters = [Cluster() for _ in range(k)]
             
             for p in points:
-                min_dist = -INF
+                min_dist = INF
                 cluster_idx = -1 
 
                 for c in range(k):
