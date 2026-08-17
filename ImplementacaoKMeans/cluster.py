@@ -1,7 +1,5 @@
 from point import Point
 
-import copy
-
 class Cluster:
     def __init__(self):
         self.points = [] 

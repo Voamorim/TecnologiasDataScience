@@ -3,7 +3,6 @@ from cluster import Cluster
 
 import random
 import csv
-import copy
 
 INF = 1_000_000_000
 
@@ -22,14 +21,15 @@ class KMeans:
 
             for row in reader:
                 dict_csv.append(row)
-
         return dict_csv
 
     def get_points(self, dados):
         points = []
+
+        # Transforma a lista de coordenadas de cada ponto em um objeto 
+        # da classe ponto
         for coordinates in dados:
             points.append(Point(list(map(float, coordinates))))
-        
         return points
 
     def get_random_points(self, points, k):
@@ -42,6 +42,7 @@ class KMeans:
         centroides = self.get_random_points(points, k)
         
         clusters = []
+        # Critério de parada: número máximo de iterações
         for i in range(n):
             clusters = [Cluster() for _ in range(k)]
             
@@ -70,7 +71,5 @@ class KMeans:
             # Critério de parada: centroides nao mudaram
             if novos_centroides == centroides:
                 break
-            
             centroides = novos_centroides
-
         return clusters, centroides

@@ -1,4 +1,3 @@
-from typing import ForwardRef
 from kmeans import KMeans
 
 dados1 = "./Data/dados_1_simples.csv"
@@ -22,7 +21,8 @@ def solve(it, k, dados, idx):
         for p in c.points:
             p.print()
         print()
-
+        print(f'centroid: {centroids[i].coordinates}')
+        print()
 
 k = 2
 it = 50
