@@ -37,6 +37,6 @@ it = 50
 solve(it, k, dados3, 3)
 
 
-k = 3
+k = 4
 it = 50
 solve(it, k, dados4, 4)
