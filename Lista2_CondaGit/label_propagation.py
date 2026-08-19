@@ -7,7 +7,7 @@ import numpy as np
 class LabelPropagation:
     def __init__(self):
         self.graph = nx.Graph()
-        self.labels = list()  
+        self.labels = dict()  
         self.n = 0 
         self.m = 0
 
@@ -31,24 +31,37 @@ class LabelPropagation:
         self.n = self.graph.number_of_nodes()
 
         # Atribui o indice do no como o label original
-        self.labels = [x for x in range(len(self.labels))]
+        for v in list(self.graph.nodes):
+            self.labels[v] = v
 
     def propagate_labels(self, node:int):
-        if self.graph.degree(node) == 0:
-            return
-
         neighbors_array = list(self.graph.neighbors(node))
-        label_freq = [0 for _ in range(self.n + 1)]
-        
+        label_freq = dict()
+
         for u in neighbors_array:
-            label_freq[self.labels[u]] += 1 
+            if self.labels[u] in label_freq.keys():
+                label_freq[self.labels[u]] += 1 
+            else:
+                label_freq[self.labels[u]] = 1
 
-        highest_freq = max(label_freq)
-        most_freq = [i for i, freq in enumerate(label_freq) if freq == highest_freq]
+        highest_freq = max(label_freq.values())
         
-        self.labels[node] = random.choice(most_freq)
+        most_freq = list() 
+        for key, value in label_freq.items():
+            if value == highest_freq:
+                most_freq.append(key)
 
-    def run(self, max_iterations:int):
+        chosen = random.choice(most_freq)
+
+        if self.labels[node] == chosen:
+            return False
+
+        self.labels[node] = chosen 
+        return True
+
+    def run(self, max_iterations:int, input_file:str):
+        self.read_graph(input_file)
+
         changed = True 
 
         for _ in range(max_iterations):
@@ -57,9 +70,9 @@ class LabelPropagation:
           
             # Inicializa a lista da ordem de acesso aleatória dos nós
             rng = np.random.default_rng()
-            node_order = np.arange(1, self.n + 1)
+            node_order = np.array(self.graph.nodes())
             rng.shuffle(node_order)
 
             for v in np.nditer(node_order):
-
-            
+                changed = changed or self.propagate_labels(int(v))
+        return list(self.labels.values())
