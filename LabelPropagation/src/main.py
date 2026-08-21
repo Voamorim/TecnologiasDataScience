@@ -3,7 +3,7 @@ from label_propagation import LabelPropagation
 import networkx as nx
 import matplotlib.pyplot as plt
 
-INPUT_FOLDER = 'Input'
+INPUT_FOLDER = '../input'
 
 # Redes de entrada
 INPUT_FILE1 = f'{INPUT_FOLDER}/rede1_duas_comunidades.csv'

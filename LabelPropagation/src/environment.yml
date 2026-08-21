@@ -1,0 +1,7 @@
+name: label_propagation
+channels:
+  - defaults
+dependencies:
+  - networkx
+  - matplotlib
+  - numpy
