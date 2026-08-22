@@ -1,16 +1,20 @@
 # Atividade Prática 2: Label Propagation 
 
-**Aluno**: Vítor Oliveira Amorim
-**Professora**: Carolina Ribeiro Xavier
-**Disiciplina**: Tecnologias para Data Science
-
---- 
+**Aluno**: Vítor Oliveira Amorim  
+**Professora**: Carolina Ribeiro Xavier  
+**Disiciplina**: Tecnologias para Data Science  
 
 ## Descrição
 
 A presente atividade desenvolvida para a disciplina de Tecnologias para Data Science contém a implementação do algoritmo de **Propagação de Rótulos (Label Propagation)** para detecção de comunidades em redes.
 
 ---
+
+## Clonar o Repositório Git
+
+```bash
+git clone https://github.com/Voamorim/TecnologiasDataScience.git
+```
 
 ## Criar e Ativar o Ambiente Conda
 
@@ -29,6 +33,10 @@ python3 main.py
 ## Resultados 
 ### Rede 1: rede1_duas_comunidades.csv
 
+**Rede final com os labels:**
+
+![Grafo da rede 1 com os labels atribuídos](./results/rede1.png)
+
 **Saída:**
 ```
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -40,6 +48,10 @@ Labels: [5, 5, 5, 5, 5, 5]
 
 ### Rede 2: rede2.csv
 
+**Rede final com os labels:**
+
+![Grafo da rede 2 com os labels atribuídos](./results/rede2.png)
+
 **Saída:**
 ```
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -50,6 +62,10 @@ Labels: [3, 3, 3, 3, 4, 4, 4]
 ```
 
 ### Rede 3: zachary.csv
+
+**Rede final com os labels:**
+
+![Grafo da rede zachary com os labels atribuídos](./results/zachary.png)
 
 **Saída:** 
 ```
