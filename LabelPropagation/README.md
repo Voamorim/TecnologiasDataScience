@@ -1,6 +1,6 @@
 # Atividade Prática 2: Label Propagation 
 
-**Aluno**: Vítor Oliveira Amorim  
+**Dupla**: Vítor Oliveira Amorim, Nathan Mateus de Lima
 **Professora**: Carolina Ribeiro Xavier  
 **Disiciplina**: Tecnologias para Data Science  
 
@@ -12,17 +12,23 @@ A presente atividade desenvolvida para a disciplina de Tecnologias para Data Sci
 
 ## Clonar o Repositório Git
 
+Para clonar o repositório git basta apenas executar e seguinte comando:
+
 ```bash
 git clone https://github.com/Voamorim/TecnologiasDataScience.git
 ```
 
 ## Criar e Ativar o Ambiente Conda
 
+Com o Conda instalado, para criar e ativar o ambiente conda basta executar os seguintes comandos:
+
 ```bash
 conda env create -f environment.yml
 conda activate label_propagation
 ```
 ## Execução
+
+Para executar o algoritmo, basta executar o seguinte comando:
 
 ```bash
 python3 main.py
@@ -78,6 +84,6 @@ Labels: [33, 1, 1, 1, 1, 1, 1, 33, 1, 1, 1, 1, 1, 1, 1, 33, 1, 33, 33, 33, 33, 3
 
 ## Dificuldades Encontradas
 
-- **Uso da biblioteca `numpy`:** Identificar onde utilizar as estruturas fornecidas pela biblioteca agregaria valor à implementação, além de ser pouco familizarizado com seus métodos e estruturas.
+- **Uso da biblioteca `numpy`:** Identificar onde utilizar as estruturas fornecidas pela biblioteca agregaria valor à implementação, além de sermos pouco familizarizados com seus métodos e estruturas.
 - **Uso da biblioteca `networkx`:** Necessidade de consultas recorrentes à documentação da biblioteca para traduzir a lógica de manipulação de grafos para os métodos da biblioteca.
 - **Inconsistênsias nos arquivos de entrada:** O terceiro arquivo de testes (`zachary.csv`) utilizava identificadores com convenção diferente dos demais (não indexados em 0), o que exigiu substituir a estrutura de listas implementada anteriormente para dicionários, garantindo que o algoritmo funcione corretamente independentemente dos identificadores utilizados no arquivo de entrada.
