@@ -1,0 +1,7 @@
+name: IFES
+channels:
+  - defaults
+dependencies:
+  - seaborn
+  - ipykernel
+prefix: /home/nathan/miniconda3/envs/IFES
