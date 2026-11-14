@@ -1,0 +1,4260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_666284a3540b6d7b8048c580ed1b8e82 {
+                    position: absolute;
+                    width: 50.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.fullscreen@3.0.0/Control.FullScreen.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ef2f8eaf87f46ecd10588d1ab3d3872d {
+                    position: absolute;
+                    width: 50.0%;
+                    height: 100.0%;
+                    left: 50.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdn.jsdelivr.net/gh/jieter/Leaflet.Sync/L.Map.Sync.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_666284a3540b6d7b8048c580ed1b8e82" ></div>
+        
+    
+            <div class="folium-map" id="map_ef2f8eaf87f46ecd10588d1ab3d3872d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_666284a3540b6d7b8048c580ed1b8e82 = L.map(
+                "map_666284a3540b6d7b8048c580ed1b8e82",
+                {
+                    center: [-21.1365, -44.2619],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "maxBounds": [
+[
+-20.1365,
+-43.2619,
+],
+[
+-22.1365,
+-45.2619,
+],
+],
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+
+            
+
+        
+    
+            var tile_layer_8639f492288bc0e5c66cd13b890d70cb = L.tileLayer(
+                "https://tile.openstreetmap.de/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8639f492288bc0e5c66cd13b890d70cb.addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topright",
+  "title": "Entrar no Modo Tela Cheia",
+  "titleCancel": "Sair do Modo Tela Cheia",
+  "forceSeparateButton": true,
+}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+            var circle_e3ee87b720a7e99ef37a0d13038c2191 = L.circle(
+                [-21.1207, -44.2465],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6099, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 95.78622030334009, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_0ccc163fe6ee3f114600654411d5dc4c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f91776834bf62795eadf2f105fa0afaa = $(`<div id="html_f91776834bf62795eadf2f105fa0afaa" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ANTIGO PREDIO DO UNIPTAN-FUNDOS<br><b>Votos:</b> 367 (45.99%)<br><b>Seções:</b> 136, 201, 135</div>`)[0];
+                popup_0ccc163fe6ee3f114600654411d5dc4c.setContent(html_f91776834bf62795eadf2f105fa0afaa);
+            
+        
+
+        circle_e3ee87b720a7e99ef37a0d13038c2191.bindPopup(popup_0ccc163fe6ee3f114600654411d5dc4c)
+        ;
+
+        
+    
+    
+            circle_e3ee87b720a7e99ef37a0d13038c2191.bindTooltip(
+                `<div>
+                     Lula: 367 votos (45.99%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_312abdf5f1a58292933b2f893e144f8e = L.circle(
+                [-21.105, -44.3427],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6562, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 55.226805085936306, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_e62394d25b17e5549d662942086d2fe2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7a83808326bef680d8b1bbe9a30bd16d = $(`<div id="html_7a83808326bef680d8b1bbe9a30bd16d" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ASSOCIAÇÃO DE MORADORES E PRODUTORES RURAIS DE SÃO GONÇALO DO AMARANTE<br><b style="color: #fca503;">Votos: 122 (50.62%)</b><br><b>Seções:</b> 190</div>`)[0];
+                popup_e62394d25b17e5549d662942086d2fe2.setContent(html_7a83808326bef680d8b1bbe9a30bd16d);
+            
+        
+
+        circle_312abdf5f1a58292933b2f893e144f8e.bindPopup(popup_e62394d25b17e5549d662942086d2fe2)
+        ;
+
+        
+    
+    
+            circle_312abdf5f1a58292933b2f893e144f8e.bindTooltip(
+                `<div>
+                     Lula: 122 votos (50.62%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_8f35dc3c4596bf84bee5b2417fc0dfc6 = L.circle(
+                [-21.1372, -44.2657],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6424, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 63.83572667401852, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_61ff0b0c85a258dce7b27ad46a406729 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0fbd975508dc2fb0c8ed036012ddb4b8 = $(`<div id="html_0fbd975508dc2fb0c8ed036012ddb4b8" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> BANDA TEODORO DE FARIA<br><b style="color: #fca503;">Votos: 163 (49.24%)</b><br><b>Seções:</b> 81</div>`)[0];
+                popup_61ff0b0c85a258dce7b27ad46a406729.setContent(html_0fbd975508dc2fb0c8ed036012ddb4b8);
+            
+        
+
+        circle_8f35dc3c4596bf84bee5b2417fc0dfc6.bindPopup(popup_61ff0b0c85a258dce7b27ad46a406729)
+        ;
+
+        
+    
+    
+            circle_8f35dc3c4596bf84bee5b2417fc0dfc6.bindTooltip(
+                `<div>
+                     Lula: 163 votos (49.24%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_a997992757eae1a1ae20d60747006a18 = L.circle(
+                [-21.3746, -44.4135],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.24519999999999997, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.142135623730951, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_c910e25d60f3ec853b80ea75c8db809c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_50894324ba41e2851599c841bae81ffd = $(`<div id="html_50894324ba41e2851599c841bae81ffd" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> CAPELA DA C0MUNIDADE DO ZUEIRA<br><b>Votos:</b> 8 (9.52%)<br><b>Seções:</b> 186</div>`)[0];
+                popup_c910e25d60f3ec853b80ea75c8db809c.setContent(html_50894324ba41e2851599c841bae81ffd);
+            
+        
+
+        circle_a997992757eae1a1ae20d60747006a18.bindPopup(popup_c910e25d60f3ec853b80ea75c8db809c)
+        ;
+
+        
+    
+    
+            circle_a997992757eae1a1ae20d60747006a18.bindTooltip(
+                `<div>
+                     Lula: 8 votos (9.52%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_c75a2a0dcaf5d447476fb848a2b21c32 = L.circle(
+                [-21.3727, -44.479],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5633, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 27.83882181415011, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_8216720633b39322297b0f032e3223f9 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_133a7cb4811f03ba1ba4959dce7adbf8 = $(`<div id="html_133a7cb4811f03ba1ba4959dce7adbf8" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> CAPELA DO VALO NOVO<br><b>Votos:</b> 31 (41.33%)<br><b>Seções:</b> 173</div>`)[0];
+                popup_8216720633b39322297b0f032e3223f9.setContent(html_133a7cb4811f03ba1ba4959dce7adbf8);
+            
+        
+
+        circle_c75a2a0dcaf5d447476fb848a2b21c32.bindPopup(popup_8216720633b39322297b0f032e3223f9)
+        ;
+
+        
+    
+    
+            circle_c75a2a0dcaf5d447476fb848a2b21c32.bindTooltip(
+                `<div>
+                     Lula: 31 votos (41.33%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_469b07f15e77d467738d010eac3aa20e = L.circle(
+                [-21.2587, -44.2011],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.43720000000000003, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25.98076211353316, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_140bec9dd4de6da66def38177c7e0be5 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7515192eb69ed188b9509eabad19530d = $(`<div id="html_7515192eb69ed188b9509eabad19530d" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> CASA PAROQUIAL CAPELA MORRO GRANDE<br><b>Votos:</b> 27 (28.72%)<br><b>Seções:</b> 225</div>`)[0];
+                popup_140bec9dd4de6da66def38177c7e0be5.setContent(html_7515192eb69ed188b9509eabad19530d);
+            
+        
+
+        circle_469b07f15e77d467738d010eac3aa20e.bindPopup(popup_140bec9dd4de6da66def38177c7e0be5)
+        ;
+
+        
+    
+    
+            circle_469b07f15e77d467738d010eac3aa20e.bindTooltip(
+                `<div>
+                     Lula: 27 votos (28.72%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_0d3c236c3a9cfc6ee0113c17da53b842 = L.circle(
+                [-21.1406, -44.2679],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6297, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 104.64224768228175, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_2a7fae6c8a7ee36a37f021be3dc84c62 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_80d5f1237deca1107e18f7227599e98e = $(`<div id="html_80d5f1237deca1107e18f7227599e98e" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> CENTRO EDUC. FREI SERÁFICO<br><b style="color: #fca503;">Votos: 438 (47.97%)</b><br><b>Seções:</b> 99, 204, 183</div>`)[0];
+                popup_2a7fae6c8a7ee36a37f021be3dc84c62.setContent(html_80d5f1237deca1107e18f7227599e98e);
+            
+        
+
+        circle_0d3c236c3a9cfc6ee0113c17da53b842.bindPopup(popup_2a7fae6c8a7ee36a37f021be3dc84c62)
+        ;
+
+        
+    
+    
+            circle_0d3c236c3a9cfc6ee0113c17da53b842.bindTooltip(
+                `<div>
+                     Lula: 438 votos (47.97%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_294ac137b8a613282c52ebedd214a120 = L.circle(
+                [-21.1436, -44.2583],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.7068, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 85.0, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_574bc9b22b1158900703b91549cc65ac = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_11053abc29017accf43d6cc7ae5f9e7d = $(`<div id="html_11053abc29017accf43d6cc7ae5f9e7d" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> CENTRO SOCIAL SAO FRANCISCO<br><b style="color: #fca503;">Votos: 289 (55.68%)</b><br><b>Seções:</b> 102, 103</div>`)[0];
+                popup_574bc9b22b1158900703b91549cc65ac.setContent(html_11053abc29017accf43d6cc7ae5f9e7d);
+            
+        
+
+        circle_294ac137b8a613282c52ebedd214a120.bindPopup(popup_574bc9b22b1158900703b91549cc65ac)
+        ;
+
+        
+    
+    
+            circle_294ac137b8a613282c52ebedd214a120.bindTooltip(
+                `<div>
+                     Lula: 289 votos (55.68%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_4c8c6ff1f5f8c1f1fd02834d531c1e6b = L.circle(
+                [-21.1384, -44.2656],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6629, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 99.87492177719089, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_1082a44b844b89870f825d999b9f4d77 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5a9da2734b9b5381d677ee5471994476 = $(`<div id="html_5a9da2734b9b5381d677ee5471994476" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> CESEC<br><b style="color: #fca503;">Votos: 399 (51.29%)</b><br><b>Seções:</b> 93, 94, 95</div>`)[0];
+                popup_1082a44b844b89870f825d999b9f4d77.setContent(html_5a9da2734b9b5381d677ee5471994476);
+            
+        
+
+        circle_4c8c6ff1f5f8c1f1fd02834d531c1e6b.bindPopup(popup_1082a44b844b89870f825d999b9f4d77)
+        ;
+
+        
+    
+    
+            circle_4c8c6ff1f5f8c1f1fd02834d531c1e6b.bindTooltip(
+                `<div>
+                     Lula: 399 votos (51.29%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_f33a594dc671718edc758646d427de02 = L.circle(
+                [-21.1253, -44.2424],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5526, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 117.04699910719626, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_3ead1807339fa9ab1e4019dba0db75a7 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d138577df70c1a3fc24cfe88966faa54 = $(`<div id="html_d138577df70c1a3fc24cfe88966faa54" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> COLEGIO ATUS (ANTIGA ESCOLA DEZ)<br><b>Votos:</b> 548 (40.26%)<br><b>Seções:</b> 297, 298, 299, 300, 301</div>`)[0];
+                popup_3ead1807339fa9ab1e4019dba0db75a7.setContent(html_d138577df70c1a3fc24cfe88966faa54);
+            
+        
+
+        circle_f33a594dc671718edc758646d427de02.bindPopup(popup_3ead1807339fa9ab1e4019dba0db75a7)
+        ;
+
+        
+    
+    
+            circle_f33a594dc671718edc758646d427de02.bindTooltip(
+                `<div>
+                     Lula: 548 votos (40.26%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_c1ae02ca70d19295ec001c49da48b675 = L.circle(
+                [-21.1361, -44.2572],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5765, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 189.47295321496415, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_ee66f7b5786bbc999a095de89f0e42ed = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_183ee395f64e0f78b9c3c708c8d53310 = $(`<div id="html_183ee395f64e0f78b9c3c708c8d53310" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> COLEGIO NOSSA SENHORA DAS DORES<br><b>Votos:</b> 1436 (42.65%)<br><b>Seções:</b> 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54</div>`)[0];
+                popup_ee66f7b5786bbc999a095de89f0e42ed.setContent(html_183ee395f64e0f78b9c3c708c8d53310);
+            
+        
+
+        circle_c1ae02ca70d19295ec001c49da48b675.bindPopup(popup_ee66f7b5786bbc999a095de89f0e42ed)
+        ;
+
+        
+    
+    
+            circle_c1ae02ca70d19295ec001c49da48b675.bindTooltip(
+                `<div>
+                     Lula: 1436 votos (42.65%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_25d6c39fb92082306c49fe9749e06a6d = L.circle(
+                [-21.1341, -44.2426],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5657, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 118.32159566199232, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_aab9c2f742ccf1a38ba5c58b721b3907 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_389c41870723968ea2e043c51db6dbcc = $(`<div id="html_389c41870723968ea2e043c51db6dbcc" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> COLÉGIO TIRADENTES PMMG<br><b>Votos:</b> 560 (41.57%)<br><b>Seções:</b> 302, 303, 304, 305, 318</div>`)[0];
+                popup_aab9c2f742ccf1a38ba5c58b721b3907.setContent(html_389c41870723968ea2e043c51db6dbcc);
+            
+        
+
+        circle_25d6c39fb92082306c49fe9749e06a6d.bindPopup(popup_aab9c2f742ccf1a38ba5c58b721b3907)
+        ;
+
+        
+    
+    
+            circle_25d6c39fb92082306c49fe9749e06a6d.bindTooltip(
+                `<div>
+                     Lula: 560 votos (41.57%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_87f657e17a539c4e0c785efd742fe968 = L.circle(
+                [-21.1293, -44.2434],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5702, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 51.96152422706632, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_83eeaee215a100de05306d79f5359ddb = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_af3f1065dd13be801ce5c81ba6c4d312 = $(`<div id="html_af3f1065dd13be801ce5c81ba6c4d312" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESC. MUN. PROF. ELPIDIO RAMALHO<br><b>Votos:</b> 108 (42.02%)<br><b>Seções:</b> 227</div>`)[0];
+                popup_83eeaee215a100de05306d79f5359ddb.setContent(html_af3f1065dd13be801ce5c81ba6c4d312);
+            
+        
+
+        circle_87f657e17a539c4e0c785efd742fe968.bindPopup(popup_83eeaee215a100de05306d79f5359ddb)
+        ;
+
+        
+    
+    
+            circle_87f657e17a539c4e0c785efd742fe968.bindTooltip(
+                `<div>
+                     Lula: 108 votos (42.02%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_6ab1b47720935b73727fa54ae0d9df87 = L.circle(
+                [-21.129, -44.2506],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6272, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 154.27248620541513, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_33a7867392d6972a3f9842388a4d2daa = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f6d5797bb8b4efc32c37c4c7c4d1baaf = $(`<div id="html_f6d5797bb8b4efc32c37c4c7c4d1baaf" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA ESTADUAL AURELIANO PIMENTEL<br><b>Votos:</b> 952 (47.72%)<br><b>Seções:</b> 118, 119, 120, 121, 122, 123, 124</div>`)[0];
+                popup_33a7867392d6972a3f9842388a4d2daa.setContent(html_f6d5797bb8b4efc32c37c4c7c4d1baaf);
+            
+        
+
+        circle_6ab1b47720935b73727fa54ae0d9df87.bindPopup(popup_33a7867392d6972a3f9842388a4d2daa)
+        ;
+
+        
+    
+    
+            circle_6ab1b47720935b73727fa54ae0d9df87.bindTooltip(
+                `<div>
+                     Lula: 952 votos (47.72%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_8a12033caec9d6eb4d933ded8576d8dc = L.circle(
+                [-21.1009, -44.2274],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5958, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 154.51537140362444, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_774620a3ad669bcfb81780ff2e3286a5 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9b4a83fcee880f2c28e442fd01bba004 = $(`<div id="html_9b4a83fcee880f2c28e442fd01bba004" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA ESTADUAL BRIGHENTHI CESARE<br><b>Votos:</b> 955 (44.58%)<br><b>Seções:</b> 205, 206, 207, 208, 209, 210, 343</div>`)[0];
+                popup_774620a3ad669bcfb81780ff2e3286a5.setContent(html_9b4a83fcee880f2c28e442fd01bba004);
+            
+        
+
+        circle_8a12033caec9d6eb4d933ded8576d8dc.bindPopup(popup_774620a3ad669bcfb81780ff2e3286a5)
+        ;
+
+        
+    
+    
+            circle_8a12033caec9d6eb4d933ded8576d8dc.bindTooltip(
+                `<div>
+                     Lula: 955 votos (44.58%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_678b828ca2a78c6449db433101ab95f0 = L.circle(
+                [-21.1421, -44.2659],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6461, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 126.78722333105966, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_40a1642174977bc66ba02d66475db13d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0a5c1ca905dc9626b93ebf7082aea271 = $(`<div id="html_0a5c1ca905dc9626b93ebf7082aea271" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA ESTADUAL CONEGO OSWALDO LUSTOSA<br><b style="color: #fca503;">Votos: 643 (49.61%)</b><br><b>Seções:</b> 112, 113, 114, 115, 342</div>`)[0];
+                popup_40a1642174977bc66ba02d66475db13d.setContent(html_0a5c1ca905dc9626b93ebf7082aea271);
+            
+        
+
+        circle_678b828ca2a78c6449db433101ab95f0.bindPopup(popup_40a1642174977bc66ba02d66475db13d)
+        ;
+
+        
+    
+    
+            circle_678b828ca2a78c6449db433101ab95f0.bindTooltip(
+                `<div>
+                     Lula: 643 votos (49.61%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_b5ada45fdd4f3da558290c0af25a0ad2 = L.circle(
+                [-21.1277, -44.2355],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5714, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 118.95377253370319, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_644f3c91d14aa475af950b0653cca2fd = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5de7892cb5a8354ac5432a0fe005ef81 = $(`<div id="html_5de7892cb5a8354ac5432a0fe005ef81" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA ESTADUAL DEPUTADO MATEUS SALOMÉ<br><b>Votos:</b> 566 (42.14%)<br><b>Seções:</b> 292, 293, 294, 295, 296</div>`)[0];
+                popup_644f3c91d14aa475af950b0653cca2fd.setContent(html_5de7892cb5a8354ac5432a0fe005ef81);
+            
+        
+
+        circle_b5ada45fdd4f3da558290c0af25a0ad2.bindPopup(popup_644f3c91d14aa475af950b0653cca2fd)
+        ;
+
+        
+    
+    
+            circle_b5ada45fdd4f3da558290c0af25a0ad2.bindTooltip(
+                `<div>
+                     Lula: 566 votos (42.14%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_4c96772914c0002a47a3620a9aee8e51 = L.circle(
+                [-21.1187, -44.2454],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6132, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 153.70426148939399, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_cadc950f44f46af0ebb3dc514d4404ee = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_01155d8a2b6f85895a2a36c1a6126696 = $(`<div id="html_01155d8a2b6f85895a2a36c1a6126696" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA ESTADUAL DR GARCIA DE LIMA<br><b>Votos:</b> 945 (46.32%)<br><b>Seções:</b> 128, 129, 130, 131, 132, 116, 117</div>`)[0];
+                popup_cadc950f44f46af0ebb3dc514d4404ee.setContent(html_01155d8a2b6f85895a2a36c1a6126696);
+            
+        
+
+        circle_4c96772914c0002a47a3620a9aee8e51.bindPopup(popup_cadc950f44f46af0ebb3dc514d4404ee)
+        ;
+
+        
+    
+    
+            circle_4c96772914c0002a47a3620a9aee8e51.bindTooltip(
+                `<div>
+                     Lula: 945 votos (46.32%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_aa453fc3f8c6868a9bb5c6c7885fceca = L.circle(
+                [-21.1895, -44.3262],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 145.08618128546908, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_76d06bdabdd830bb6ac61b6761ad159a = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_25043539082a11a8921f8dd7ca1cb4e9 = $(`<div id="html_25043539082a11a8921f8dd7ca1cb4e9" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA ESTADUAL EVANDRO AVILA<br><b style="color: #fca503;">Votos: 842 (62.65%)</b><br><b>Seções:</b> 174, 175, 176, 177, 336</div>`)[0];
+                popup_76d06bdabdd830bb6ac61b6761ad159a.setContent(html_25043539082a11a8921f8dd7ca1cb4e9);
+            
+        
+
+        circle_aa453fc3f8c6868a9bb5c6c7885fceca.bindPopup(popup_76d06bdabdd830bb6ac61b6761ad159a)
+        ;
+
+        
+    
+    
+            circle_aa453fc3f8c6868a9bb5c6c7885fceca.bindTooltip(
+                `<div>
+                     Lula: 842 votos (62.65%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_ccd0c5b18cb132b3e58c54fe9bca3aa8 = L.circle(
+                [-21.1284, -44.2341],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5436, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 154.19143945109275, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_698f51d992abe54e05b52e4e08c7f5a3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4e92d346e783d0d1e10aa66cd2ab90da = $(`<div id="html_4e92d346e783d0d1e10aa66cd2ab90da" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA ESTADUAL GOVERNADOR MILTON CAMPOS<br><b>Votos:</b> 951 (39.36%)<br><b>Seções:</b> 320, 321, 322, 323, 324, 325, 326, 319</div>`)[0];
+                popup_698f51d992abe54e05b52e4e08c7f5a3.setContent(html_4e92d346e783d0d1e10aa66cd2ab90da);
+            
+        
+
+        circle_ccd0c5b18cb132b3e58c54fe9bca3aa8.bindPopup(popup_698f51d992abe54e05b52e4e08c7f5a3)
+        ;
+
+        
+    
+    
+            circle_ccd0c5b18cb132b3e58c54fe9bca3aa8.bindTooltip(
+                `<div>
+                     Lula: 951 votos (39.36%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_7339acd1c58c2512d9d490793c2f8682 = L.circle(
+                [-21.143, -44.274],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.7014, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 194.87175269905077, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_54d6d89541320fd05c2854b9b459656f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_85502d3dae7ba6ddf28c67e08c29750a = $(`<div id="html_85502d3dae7ba6ddf28c67e08c29750a" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA ESTADUAL IAGO PIMENTEL<br><b style="color: #fca503;">Votos: 1519 (55.14%)</b><br><b>Seções:</b> 197, 200, 86, 87, 88, 89, 90, 91, 92</div>`)[0];
+                popup_54d6d89541320fd05c2854b9b459656f.setContent(html_85502d3dae7ba6ddf28c67e08c29750a);
+            
+        
+
+        circle_7339acd1c58c2512d9d490793c2f8682.bindPopup(popup_54d6d89541320fd05c2854b9b459656f)
+        ;
+
+        
+    
+    
+            circle_7339acd1c58c2512d9d490793c2f8682.bindTooltip(
+                `<div>
+                     Lula: 1519 votos (55.14%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_0e72c03fde0310ab8f3467440fa6f14d = L.circle(
+                [-21.1275, -44.2646],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.7176, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 175.92612085759183, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_f6bdadf80317b070efd0f1ff894b4698 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9c1f08524c6054bbb772834478b363e2 = $(`<div id="html_9c1f08524c6054bbb772834478b363e2" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA ESTADUAL IDALINA HORTA GALVAO<br><b style="color: #fca503;">Votos: 1238 (56.76%)</b><br><b>Seções:</b> 141, 142, 143, 144, 145, 146, 147, 148</div>`)[0];
+                popup_f6bdadf80317b070efd0f1ff894b4698.setContent(html_9c1f08524c6054bbb772834478b363e2);
+            
+        
+
+        circle_0e72c03fde0310ab8f3467440fa6f14d.bindPopup(popup_f6bdadf80317b070efd0f1ff894b4698)
+        ;
+
+        
+    
+    
+            circle_0e72c03fde0310ab8f3467440fa6f14d.bindTooltip(
+                `<div>
+                     Lula: 1238 votos (56.76%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_4b587166d7ee974d3691ccadff9f36ec = L.circle(
+                [-21.1405, -44.258],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6768000000000001, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 173.27723451163456, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_9aa49a7e58eaea21bc29e433ddec3b36 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e26a8c4facdcfb88f9de9d385c91995d = $(`<div id="html_e26a8c4facdcfb88f9de9d385c91995d" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA ESTADUAL INACIO PASSOS<br><b style="color: #fca503;">Votos: 1201 (52.68%)</b><br><b>Seções:</b> 198, 104, 105, 106, 107, 108, 109, 111</div>`)[0];
+                popup_9aa49a7e58eaea21bc29e433ddec3b36.setContent(html_e26a8c4facdcfb88f9de9d385c91995d);
+            
+        
+
+        circle_4b587166d7ee974d3691ccadff9f36ec.bindPopup(popup_9aa49a7e58eaea21bc29e433ddec3b36)
+        ;
+
+        
+    
+    
+            circle_4b587166d7ee974d3691ccadff9f36ec.bindTooltip(
+                `<div>
+                     Lula: 1201 votos (52.68%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_c6739bd86d10ffaab66484f7dedf92d9 = L.circle(
+                [-21.1268, -44.2545],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.7169, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 137.2953021774598, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_c66516c1b42cb0c593f11a50f32b8f9a = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4900404880583500c7e743e525a9b166 = $(`<div id="html_4900404880583500c7e743e525a9b166" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA ESTADUAL MINISTRO GABRIEL PASSOS<br><b style="color: #fca503;">Votos: 754 (56.69%)</b><br><b>Seções:</b> 202, 150, 151, 152, 153</div>`)[0];
+                popup_c66516c1b42cb0c593f11a50f32b8f9a.setContent(html_4900404880583500c7e743e525a9b166);
+            
+        
+
+        circle_c6739bd86d10ffaab66484f7dedf92d9.bindPopup(popup_c66516c1b42cb0c593f11a50f32b8f9a)
+        ;
+
+        
+    
+    
+            circle_c6739bd86d10ffaab66484f7dedf92d9.bindTooltip(
+                `<div>
+                     Lula: 754 votos (56.69%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_0cdd7f6e3483357e04ab0ff383374c61 = L.circle(
+                [-21.2473, -44.4174],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5847, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 112.13830746002901, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_81361f5ba4860359956109e7f08134fe = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e7d4a5ae683c46f2cbc04479ecd7cdff = $(`<div id="html_e7d4a5ae683c46f2cbc04479ecd7cdff" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA ESTADUAL PADRE LOPES<br><b>Votos:</b> 503 (43.47%)<br><b>Seções:</b> 165, 166, 167, 168, 169</div>`)[0];
+                popup_81361f5ba4860359956109e7f08134fe.setContent(html_e7d4a5ae683c46f2cbc04479ecd7cdff);
+            
+        
+
+        circle_0cdd7f6e3483357e04ab0ff383374c61.bindPopup(popup_81361f5ba4860359956109e7f08134fe)
+        ;
+
+        
+    
+    
+            circle_0cdd7f6e3483357e04ab0ff383374c61.bindTooltip(
+                `<div>
+                     Lula: 503 votos (43.47%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_0b20b70edeae5afc4f001dbfe7807a64 = L.circle(
+                [-21.1288, -44.2401],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5964, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 172.84386017443606, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_4fad80d2fd9ff6aef5a159aa47674411 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_aa285b20dd2e13c075eeb8f7460e8652 = $(`<div id="html_aa285b20dd2e13c075eeb8f7460e8652" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA ESTADUAL TOMÉ PORTES DEL REI<br><b>Votos:</b> 1195 (44.64%)<br><b>Seções:</b> 288, 289, 290, 291, 308, 309, 284, 285, 286, 287</div>`)[0];
+                popup_4fad80d2fd9ff6aef5a159aa47674411.setContent(html_aa285b20dd2e13c075eeb8f7460e8652);
+            
+        
+
+        circle_0b20b70edeae5afc4f001dbfe7807a64.bindPopup(popup_4fad80d2fd9ff6aef5a159aa47674411)
+        ;
+
+        
+    
+    
+            circle_0b20b70edeae5afc4f001dbfe7807a64.bindTooltip(
+                `<div>
+                     Lula: 1195 votos (44.64%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_5f9c9f93ef334bb26c437b3faad91bc3 = L.circle(
+                [-21.1363, -44.2311],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6244, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 127.37739202856997, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_a9b1e033ebc6d928b35306aaac3ae820 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b512ebfb49876790ac25819826a49145 = $(`<div id="html_b512ebfb49876790ac25819826a49145" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL BOM PASTOR (PIPOCAS DE MEL)<br><b>Votos:</b> 649 (47.44%)<br><b>Seções:</b> 307, 310, 311, 312, 313</div>`)[0];
+                popup_a9b1e033ebc6d928b35306aaac3ae820.setContent(html_b512ebfb49876790ac25819826a49145);
+            
+        
+
+        circle_5f9c9f93ef334bb26c437b3faad91bc3.bindPopup(popup_a9b1e033ebc6d928b35306aaac3ae820)
+        ;
+
+        
+    
+    
+            circle_5f9c9f93ef334bb26c437b3faad91bc3.bindTooltip(
+                `<div>
+                     Lula: 649 votos (47.44%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_d079dbfda98b6e2c75886f207abdd492 = L.circle(
+                [-21.115, -44.2244],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5825, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 122.37238250520417, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_e3150c748e496d949a1513f6a20fa02d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_bb3e5fd456e9e9a0b8ecd05fb7ae46b3 = $(`<div id="html_bb3e5fd456e9e9a0b8ecd05fb7ae46b3" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL CELSO RAIMUNDO DA SILVA<br><b>Votos:</b> 599 (43.25%)<br><b>Seções:</b> 341, 314, 315, 316, 317</div>`)[0];
+                popup_e3150c748e496d949a1513f6a20fa02d.setContent(html_bb3e5fd456e9e9a0b8ecd05fb7ae46b3);
+            
+        
+
+        circle_d079dbfda98b6e2c75886f207abdd492.bindPopup(popup_e3150c748e496d949a1513f6a20fa02d)
+        ;
+
+        
+    
+    
+            circle_d079dbfda98b6e2c75886f207abdd492.bindTooltip(
+                `<div>
+                     Lula: 599 votos (43.25%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_eaa40347d27a787b703be272bb100624 = L.circle(
+                [-21.115, -44.226],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5903, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 73.14369419163897, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_086ecdbb5dfc73df6e3909ce019b8b0f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_dec5051eaaa4ed2bd01a7d7b2f7ddae8 = $(`<div id="html_dec5051eaaa4ed2bd01a7d7b2f7ddae8" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL CELSO RAIMUNDO DA SILVA<br><b>Votos:</b> 214 (44.03%)<br><b>Seções:</b> 329, 327</div>`)[0];
+                popup_086ecdbb5dfc73df6e3909ce019b8b0f.setContent(html_dec5051eaaa4ed2bd01a7d7b2f7ddae8);
+            
+        
+
+        circle_eaa40347d27a787b703be272bb100624.bindPopup(popup_086ecdbb5dfc73df6e3909ce019b8b0f)
+        ;
+
+        
+    
+    
+            circle_eaa40347d27a787b703be272bb100624.bindTooltip(
+                `<div>
+                     Lula: 214 votos (44.03%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_ac8bd749f8a82e444ef9a913b2ca97f7 = L.circle(
+                [-21.3043, -44.3184],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.599, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 75.66372975210778, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_4b9753f555ce39e31b6e5283c8a52b09 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_62c7c14630de8765c49059aae1c37530 = $(`<div id="html_62c7c14630de8765c49059aae1c37530" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL DE ARCÂNGELO<br><b>Votos:</b> 229 (44.9%)<br><b>Seções:</b> 157, 158</div>`)[0];
+                popup_4b9753f555ce39e31b6e5283c8a52b09.setContent(html_62c7c14630de8765c49059aae1c37530);
+            
+        
+
+        circle_ac8bd749f8a82e444ef9a913b2ca97f7.bindPopup(popup_4b9753f555ce39e31b6e5283c8a52b09)
+        ;
+
+        
+    
+    
+            circle_ac8bd749f8a82e444ef9a913b2ca97f7.bindTooltip(
+                `<div>
+                     Lula: 229 votos (44.9%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_11bee1ddc17822eb73e1eed0306ad8ee = L.circle(
+                [-21.2933, -44.1206],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6554, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 48.218253804964775, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_258f009e71354dc18af0394d4b09e5ce = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6eb2b3e94615d10b169b987925303df2 = $(`<div id="html_6eb2b3e94615d10b169b987925303df2" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL DE EMBOABAS<br><b style="color: #fca503;">Votos: 93 (50.54%)</b><br><b>Seções:</b> 333</div>`)[0];
+                popup_258f009e71354dc18af0394d4b09e5ce.setContent(html_6eb2b3e94615d10b169b987925303df2);
+            
+        
+
+        circle_11bee1ddc17822eb73e1eed0306ad8ee.bindPopup(popup_258f009e71354dc18af0394d4b09e5ce)
+        ;
+
+        
+    
+    
+            circle_11bee1ddc17822eb73e1eed0306ad8ee.bindTooltip(
+                `<div>
+                     Lula: 93 votos (50.54%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_ca4f03e430ab6507bb4b4d686f23aff7 = L.circle(
+                [-21.1965, -44.3508],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 67.0820393249937, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_4b8f84c32ee0d400fe76e612f46dcecc = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a131f96bb13d036227a99d7eaa308ac9 = $(`<div id="html_a131f96bb13d036227a99d7eaa308ac9" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL DE GOIABEIRAS<br><b style="color: #fca503;">Votos: 180 (67.42%)</b><br><b>Seções:</b> 178</div>`)[0];
+                popup_4b8f84c32ee0d400fe76e612f46dcecc.setContent(html_a131f96bb13d036227a99d7eaa308ac9);
+            
+        
+
+        circle_ca4f03e430ab6507bb4b4d686f23aff7.bindPopup(popup_4b8f84c32ee0d400fe76e612f46dcecc)
+        ;
+
+        
+    
+    
+            circle_ca4f03e430ab6507bb4b4d686f23aff7.bindTooltip(
+                `<div>
+                     Lula: 180 votos (67.42%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_cd4c6c455d3d979e25472a632eac5548 = L.circle(
+                [-21.1431, -44.263],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.7392000000000001, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 68.00735254367721, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_42f83728e0e1b46c74f5c6e3e6334dbd = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_082b48b35e55a39b1b71ecc959f49267 = $(`<div id="html_082b48b35e55a39b1b71ecc959f49267" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL DOMINGOS HORTA<br><b style="color: #fca503;">Votos: 185 (58.92%)</b><br><b>Seções:</b> 110</div>`)[0];
+                popup_42f83728e0e1b46c74f5c6e3e6334dbd.setContent(html_082b48b35e55a39b1b71ecc959f49267);
+            
+        
+
+        circle_cd4c6c455d3d979e25472a632eac5548.bindPopup(popup_42f83728e0e1b46c74f5c6e3e6334dbd)
+        ;
+
+        
+    
+    
+            circle_cd4c6c455d3d979e25472a632eac5548.bindTooltip(
+                `<div>
+                     Lula: 185 votos (58.92%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_5fb97099e58100333ff16851745ff400 = L.circle(
+                [-21.1416, -44.2762],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.7420000000000001, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 159.6871942267131, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_80ce5a1e3553341378a906cadc96f2e8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b0ae3b6ca6c643d30cebd215bd9581f6 = $(`<div id="html_b0ae3b6ca6c643d30cebd215bd9581f6" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL DR. KLEBER VASQUES  FILGUEIRAS<br><b style="color: #fca503;">Votos: 1020 (59.2%)</b><br><b>Seções:</b> 100, 335, 82, 83, 84, 85</div>`)[0];
+                popup_80ce5a1e3553341378a906cadc96f2e8.setContent(html_b0ae3b6ca6c643d30cebd215bd9581f6);
+            
+        
+
+        circle_5fb97099e58100333ff16851745ff400.bindPopup(popup_80ce5a1e3553341378a906cadc96f2e8)
+        ;
+
+        
+    
+    
+            circle_5fb97099e58100333ff16851745ff400.bindTooltip(
+                `<div>
+                     Lula: 1020 votos (59.2%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_3fe53d728bf5328d671e59592a164ed6 = L.circle(
+                [-21.1375, -44.2583],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5497, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 109.08712114635713, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_961cfb8aa953cd48a56894d7d55f8236 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_fa4534e461319dd1b4f399f9da39adb1 = $(`<div id="html_fa4534e461319dd1b4f399f9da39adb1" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL MARIA TERESA<br><b>Votos:</b> 476 (39.97%)<br><b>Seções:</b> 67, 68, 69, 40, 41</div>`)[0];
+                popup_961cfb8aa953cd48a56894d7d55f8236.setContent(html_fa4534e461319dd1b4f399f9da39adb1);
+            
+        
+
+        circle_3fe53d728bf5328d671e59592a164ed6.bindPopup(popup_961cfb8aa953cd48a56894d7d55f8236)
+        ;
+
+        
+    
+    
+            circle_3fe53d728bf5328d671e59592a164ed6.bindTooltip(
+                `<div>
+                     Lula: 476 votos (39.97%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_575658fc5f8b469c8e2c1989b0009888 = L.circle(
+                [-21.1001, -44.2224],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5703, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 101.73494974687901, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_bc451fc141320018ef8715f4bb26361a = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b77d115c51a3e286c24154cf0cecc1f6 = $(`<div id="html_b77d115c51a3e286c24154cf0cecc1f6" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL MENINO JESUS<br><b>Votos:</b> 414 (42.03%)<br><b>Seções:</b> 211, 212, 213</div>`)[0];
+                popup_bc451fc141320018ef8715f4bb26361a.setContent(html_b77d115c51a3e286c24154cf0cecc1f6);
+            
+        
+
+        circle_575658fc5f8b469c8e2c1989b0009888.bindPopup(popup_bc451fc141320018ef8715f4bb26361a)
+        ;
+
+        
+    
+    
+            circle_575658fc5f8b469c8e2c1989b0009888.bindTooltip(
+                `<div>
+                     Lula: 414 votos (42.03%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_86f36013799a7f57e8a234aa7a08db1c = L.circle(
+                [-21.1403, -44.2306],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5767, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 148.74474780643516, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_5d8d3a8b1574cd51fef7c42dbaefe7f3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_715fc9b95e8760ceaa5e23e1d99577e7 = $(`<div id="html_715fc9b95e8760ceaa5e23e1d99577e7" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL PIO XII<br><b>Votos:</b> 885 (42.67%)<br><b>Seções:</b> 232, 233, 234, 235, 236, 237, 339</div>`)[0];
+                popup_5d8d3a8b1574cd51fef7c42dbaefe7f3.setContent(html_715fc9b95e8760ceaa5e23e1d99577e7);
+            
+        
+
+        circle_86f36013799a7f57e8a234aa7a08db1c.bindPopup(popup_5d8d3a8b1574cd51fef7c42dbaefe7f3)
+        ;
+
+        
+    
+    
+            circle_86f36013799a7f57e8a234aa7a08db1c.bindTooltip(
+                `<div>
+                     Lula: 885 votos (42.67%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_cb859d48a89eecc2465284c38c68b0eb = L.circle(
+                [-21.0849, -44.2333],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5451, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 66.52067347825036, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_39a749dd0f133de92d0701f6a2555946 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ce718904afa918dfca35fb0870ec3112 = $(`<div id="html_ce718904afa918dfca35fb0870ec3112" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> GRUPO ESCOLAR MUNICIPAL PARADA DO GIAROLA<br><b>Votos:</b> 177 (39.51%)<br><b>Seções:</b> 230, 231</div>`)[0];
+                popup_39a749dd0f133de92d0701f6a2555946.setContent(html_ce718904afa918dfca35fb0870ec3112);
+            
+        
+
+        circle_cb859d48a89eecc2465284c38c68b0eb.bindPopup(popup_39a749dd0f133de92d0701f6a2555946)
+        ;
+
+        
+    
+    
+            circle_cb859d48a89eecc2465284c38c68b0eb.bindTooltip(
+                `<div>
+                     Lula: 177 votos (39.51%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_d989db7a9f4d93e08e49837af267ba55 = L.circle(
+                [-21.1114, -44.2374],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5997, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 105.23782589924593, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_09375bb43539ab8ac07be457a4fd7ed1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4d4021ce238dc081fd841a8792d1f141 = $(`<div id="html_4d4021ce238dc081fd841a8792d1f141" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> IGREJA NOSSA SENHORA DA CONCEIÇÃO<br><b>Votos:</b> 443 (44.97%)<br><b>Seções:</b> 216, 214, 215</div>`)[0];
+                popup_09375bb43539ab8ac07be457a4fd7ed1.setContent(html_4d4021ce238dc081fd841a8792d1f141);
+            
+        
+
+        circle_d989db7a9f4d93e08e49837af267ba55.bindPopup(popup_09375bb43539ab8ac07be457a4fd7ed1)
+        ;
+
+        
+    
+    
+            circle_d989db7a9f4d93e08e49837af267ba55.bindTooltip(
+                `<div>
+                     Lula: 443 votos (44.97%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_0dc5a7ef44ba1e16887c71cd67bbaffc = L.circle(
+                [-21.1436, -44.2797],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6392, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 119.16375287812984, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_ce2a9e633cb33cb859742ea9aeb7a1f2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7c5f416d4bef3136d5f37d3701fa477d = $(`<div id="html_7c5f416d4bef3136d5f37d3701fa477d" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> OBRAS SOCIAIS FE E ALEGRIA<br><b style="color: #fca503;">Votos: 568 (48.92%)</b><br><b>Seções:</b> 96, 97, 98, 199</div>`)[0];
+                popup_ce2a9e633cb33cb859742ea9aeb7a1f2.setContent(html_7c5f416d4bef3136d5f37d3701fa477d);
+            
+        
+
+        circle_0dc5a7ef44ba1e16887c71cd67bbaffc.bindPopup(popup_ce2a9e633cb33cb859742ea9aeb7a1f2)
+        ;
+
+        
+    
+    
+            circle_0dc5a7ef44ba1e16887c71cd67bbaffc.bindTooltip(
+                `<div>
+                     Lula: 568 votos (48.92%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_2fec7633513dad5fe35f3db70be0166f = L.circle(
+                [-21.1324, -44.2655],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 75.0, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_7d89056079f2417fca8ff13317b27c97 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4f1615918dedf7a3d8d9d7509c632096 = $(`<div id="html_4f1615918dedf7a3d8d9d7509c632096" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SALAO PAROQUIAL NOSSA SENHORA AUXILIADORA<br><b style="color: #fca503;">Votos: 225 (63.74%)</b><br><b>Seções:</b> 139, 140</div>`)[0];
+                popup_7d89056079f2417fca8ff13317b27c97.setContent(html_4f1615918dedf7a3d8d9d7509c632096);
+            
+        
+
+        circle_2fec7633513dad5fe35f3db70be0166f.bindPopup(popup_7d89056079f2417fca8ff13317b27c97)
+        ;
+
+        
+    
+    
+            circle_2fec7633513dad5fe35f3db70be0166f.bindTooltip(
+                `<div>
+                     Lula: 225 votos (63.74%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_6243f2adf1150aa14089294f062c119e = L.circle(
+                [-21.1262, -44.2573],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 92.33092656309694, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_fdd51ff2e7879e491eb9956e955d4512 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b83788eb2a00a1f3b1e0242e310d38f3 = $(`<div id="html_b83788eb2a00a1f3b1e0242e310d38f3" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SALAO PAROQUIAL SAO GERALDO<br><b style="color: #fca503;">Votos: 341 (62.11%)</b><br><b>Seções:</b> 154, 155</div>`)[0];
+                popup_fdd51ff2e7879e491eb9956e955d4512.setContent(html_b83788eb2a00a1f3b1e0242e310d38f3);
+            
+        
+
+        circle_6243f2adf1150aa14089294f062c119e.bindPopup(popup_fdd51ff2e7879e491eb9956e955d4512)
+        ;
+
+        
+    
+    
+            circle_6243f2adf1150aa14089294f062c119e.bindTooltip(
+                `<div>
+                     Lula: 341 votos (62.11%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_4f153389092f22428a22475a527b2c97 = L.circle(
+                [-21.2122, -44.3583],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 48.733971724044814, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_0baa3c9268578f46ff5fa699be629ba2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_667083fe34725a99bc3c068d52efe9ca = $(`<div id="html_667083fe34725a99bc3c068d52efe9ca" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SALÃO COMUNITARIO DO CANELA<br><b style="color: #fca503;">Votos: 95 (65.07%)</b><br><b>Seções:</b> 179</div>`)[0];
+                popup_0baa3c9268578f46ff5fa699be629ba2.setContent(html_667083fe34725a99bc3c068d52efe9ca);
+            
+        
+
+        circle_4f153389092f22428a22475a527b2c97.bindPopup(popup_0baa3c9268578f46ff5fa699be629ba2)
+        ;
+
+        
+    
+    
+            circle_4f153389092f22428a22475a527b2c97.bindTooltip(
+                `<div>
+                     Lula: 95 votos (65.07%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_73f1ade36f7cde8c4f8289bd85365d39 = L.circle(
+                [-21.332, -44.5428],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 36.742346141747674, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_dba14e903af0a55478d80e6a5e1ad1e9 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6cf5ec3e45871abc26d13d6e33cde7c0 = $(`<div id="html_6cf5ec3e45871abc26d13d6e33cde7c0" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SALÃO COMUNITARIO DO CAQUENDE<br><b style="color: #fca503;">Votos: 54 (65.06%)</b><br><b>Seções:</b> 185</div>`)[0];
+                popup_dba14e903af0a55478d80e6a5e1ad1e9.setContent(html_6cf5ec3e45871abc26d13d6e33cde7c0);
+            
+        
+
+        circle_73f1ade36f7cde8c4f8289bd85365d39.bindPopup(popup_dba14e903af0a55478d80e6a5e1ad1e9)
+        ;
+
+        
+    
+    
+            circle_73f1ade36f7cde8c4f8289bd85365d39.bindTooltip(
+                `<div>
+                     Lula: 54 votos (65.06%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_7c5b7e44989bf18f0b3b7d38b889a87e = L.circle(
+                [-21.1141, -44.3748],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6088, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 31.22498999199199, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_91302be1aae0dada92850d94df497229 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c0c0d6c0eef56867d96c21a8fa492a8e = $(`<div id="html_c0c0d6c0eef56867d96c21a8fa492a8e" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SALÃO COMUNITÁRIO DA IGREJA DE CAXAMBU<br><b>Votos:</b> 39 (45.88%)<br><b>Seções:</b> 192</div>`)[0];
+                popup_91302be1aae0dada92850d94df497229.setContent(html_c0c0d6c0eef56867d96c21a8fa492a8e);
+            
+        
+
+        circle_7c5b7e44989bf18f0b3b7d38b889a87e.bindPopup(popup_91302be1aae0dada92850d94df497229)
+        ;
+
+        
+    
+    
+            circle_7c5b7e44989bf18f0b3b7d38b889a87e.bindTooltip(
+                `<div>
+                     Lula: 39 votos (45.88%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_43430d005e6a30707172547a0c53024e = L.circle(
+                [-21.3313, -44.4937],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.3886, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 22.9128784747792, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_68251fe27a0df6cd73fdfa3b91978c61 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f1c2fb1b729753f0a59df9d50b1b15f0 = $(`<div id="html_f1c2fb1b729753f0a59df9d50b1b15f0" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SALÃO COMUNITÁRIO DO ENGENHO DE SERRA<br><b>Votos:</b> 21 (23.86%)<br><b>Seções:</b> 172</div>`)[0];
+                popup_68251fe27a0df6cd73fdfa3b91978c61.setContent(html_f1c2fb1b729753f0a59df9d50b1b15f0);
+            
+        
+
+        circle_43430d005e6a30707172547a0c53024e.bindPopup(popup_68251fe27a0df6cd73fdfa3b91978c61)
+        ;
+
+        
+    
+    
+            circle_43430d005e6a30707172547a0c53024e.bindTooltip(
+                `<div>
+                     Lula: 21 votos (23.86%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_c06c484a2632fc3692f0c10b0f65db43 = L.circle(
+                [-21.3422, -44.261],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5682, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 23.979157616563597, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_2b63b101f0ad3ad239d64230519d9f55 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_38cb753e75e1e494ba61b47b80fd66be = $(`<div id="html_38cb753e75e1e494ba61b47b80fd66be" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SALÃO DA CAPELA DE SÃO BENEDITO<br><b>Votos:</b> 23 (41.82%)<br><b>Seções:</b> 163</div>`)[0];
+                popup_2b63b101f0ad3ad239d64230519d9f55.setContent(html_38cb753e75e1e494ba61b47b80fd66be);
+            
+        
+
+        circle_c06c484a2632fc3692f0c10b0f65db43.bindPopup(popup_2b63b101f0ad3ad239d64230519d9f55)
+        ;
+
+        
+    
+    
+            circle_c06c484a2632fc3692f0c10b0f65db43.bindTooltip(
+                `<div>
+                     Lula: 23 votos (41.82%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_d4ea36b63483670ffdda0bb94b196c5f = L.circle(
+                [-21.237, -44.3744],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5057, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 41.53311931459037, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_16c63d01450d1bce79c709e8b3330a54 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_125369dd337e2e4d0046ccd8b88c08c8 = $(`<div id="html_125369dd337e2e4d0046ccd8b88c08c8" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SALÃO DA IGREJA DE SÃO JANUÁRIO<br><b>Votos:</b> 69 (35.57%)<br><b>Seções:</b> 171</div>`)[0];
+                popup_16c63d01450d1bce79c709e8b3330a54.setContent(html_125369dd337e2e4d0046ccd8b88c08c8);
+            
+        
+
+        circle_d4ea36b63483670ffdda0bb94b196c5f.bindPopup(popup_16c63d01450d1bce79c709e8b3330a54)
+        ;
+
+        
+    
+    
+            circle_d4ea36b63483670ffdda0bb94b196c5f.bindTooltip(
+                `<div>
+                     Lula: 69 votos (35.57%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_619ae926dbc88ebbaf72c98c397f07e0 = L.circle(
+                [-21.3317, -44.4435],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5204, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 22.360679774997898, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_ef8e22eb02c30414452e69dfc119f8c7 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7ff9cc8ac2ba85113eeaf8cf7577da90 = $(`<div id="html_7ff9cc8ac2ba85113eeaf8cf7577da90" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SALÃO PAROQUIAL DE CRUZEIRO DA BARRA<br><b>Votos:</b> 20 (37.04%)<br><b>Seções:</b> 180</div>`)[0];
+                popup_ef8e22eb02c30414452e69dfc119f8c7.setContent(html_7ff9cc8ac2ba85113eeaf8cf7577da90);
+            
+        
+
+        circle_619ae926dbc88ebbaf72c98c397f07e0.bindPopup(popup_ef8e22eb02c30414452e69dfc119f8c7)
+        ;
+
+        
+    
+    
+            circle_619ae926dbc88ebbaf72c98c397f07e0.bindTooltip(
+                `<div>
+                     Lula: 20 votos (37.04%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_d0be2743af076ac86bbe663698eae2fe = L.circle(
+                [-21.1492, -44.3268],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6306, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 39.370039370059054, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_8a5a504fabec9e476e4845185262274c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_97a1f93828bc3600844f1e2bd6690304 = $(`<div id="html_97a1f93828bc3600844f1e2bd6690304" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SALÃO PAROQUIAL DO FÉ<br><b style="color: #fca503;">Votos: 62 (48.06%)</b><br><b>Seções:</b> 193</div>`)[0];
+                popup_8a5a504fabec9e476e4845185262274c.setContent(html_97a1f93828bc3600844f1e2bd6690304);
+            
+        
+
+        circle_d0be2743af076ac86bbe663698eae2fe.bindPopup(popup_8a5a504fabec9e476e4845185262274c)
+        ;
+
+        
+    
+    
+            circle_d0be2743af076ac86bbe663698eae2fe.bindTooltip(
+                `<div>
+                     Lula: 62 votos (48.06%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_f1dd90a2e1ec06833a51ebaa6472ca2a = L.circle(
+                [-21.1493, -44.3268],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5522, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 30.413812651491096, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_c057a277c482bb5509200e02a4d0328b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_dbda9060f05a1657c3c8370795902f6f = $(`<div id="html_dbda9060f05a1657c3c8370795902f6f" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SALÃO PAROQUIAL DO POVOADO DA TRINDADE<br><b>Votos:</b> 37 (40.22%)<br><b>Seções:</b> 187</div>`)[0];
+                popup_c057a277c482bb5509200e02a4d0328b.setContent(html_dbda9060f05a1657c3c8370795902f6f);
+            
+        
+
+        circle_f1dd90a2e1ec06833a51ebaa6472ca2a.bindPopup(popup_c057a277c482bb5509200e02a4d0328b)
+        ;
+
+        
+    
+    
+            circle_f1dd90a2e1ec06833a51ebaa6472ca2a.bindTooltip(
+                `<div>
+                     Lula: 37 votos (40.22%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_f8a8d628b39e95f907af82d70a6817c5 = L.circle(
+                [-21.1353, -44.2676],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 92.19544457292886, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_2eb24a996c4289928814a1a9f4261206 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_80cc8aaa25e1bfacb975a64419e7fa5a = $(`<div id="html_80cc8aaa25e1bfacb975a64419e7fa5a" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SALÃO PAROQUIAL N SENHORA APARECIDA<br><b style="color: #fca503;">Votos: 340 (63.55%)</b><br><b>Seções:</b> 137, 138</div>`)[0];
+                popup_2eb24a996c4289928814a1a9f4261206.setContent(html_80cc8aaa25e1bfacb975a64419e7fa5a);
+            
+        
+
+        circle_f8a8d628b39e95f907af82d70a6817c5.bindPopup(popup_2eb24a996c4289928814a1a9f4261206)
+        ;
+
+        
+    
+    
+            circle_f8a8d628b39e95f907af82d70a6817c5.bindTooltip(
+                `<div>
+                     Lula: 340 votos (63.55%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_9702a38e23de3e96b59fb17b9f206518 = L.circle(
+                [-21.3244, -44.0724],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6114999999999999, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 27.386127875258307, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_dddc80be56c9f79384a1248176586731 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_84c8582de40af9bd56330cd5ec8adfb4 = $(`<div id="html_84c8582de40af9bd56330cd5ec8adfb4" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SALÃO/GALPÃO DA IGREJA DA COMUNIDADE DE CANANEIA<br><b>Votos:</b> 30 (46.15%)<br><b>Seções:</b> 331</div>`)[0];
+                popup_dddc80be56c9f79384a1248176586731.setContent(html_84c8582de40af9bd56330cd5ec8adfb4);
+            
+        
+
+        circle_9702a38e23de3e96b59fb17b9f206518.bindPopup(popup_dddc80be56c9f79384a1248176586731)
+        ;
+
+        
+    
+    
+            circle_9702a38e23de3e96b59fb17b9f206518.bindTooltip(
+                `<div>
+                     Lula: 30 votos (46.15%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_f351d972a820ece0c8ecb83f7686fc8e = L.circle(
+                [-21.1268, -44.2404],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5506, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 147.56354563373708, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_4062fc27e8bbd0eeeac2870e2961f76e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_effe399ceed1ca436e61802bd70605db = $(`<div id="html_effe399ceed1ca436e61802bd70605db" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SERVICO NACIONAL DE APRENDIZAGEM INDUSTRIAL SENAI<br><b>Votos:</b> 871 (40.06%)<br><b>Seções:</b> 224, 217, 218, 219, 220, 221, 222, 223</div>`)[0];
+                popup_4062fc27e8bbd0eeeac2870e2961f76e.setContent(html_effe399ceed1ca436e61802bd70605db);
+            
+        
+
+        circle_f351d972a820ece0c8ecb83f7686fc8e.bindPopup(popup_4062fc27e8bbd0eeeac2870e2961f76e)
+        ;
+
+        
+    
+    
+            circle_f351d972a820ece0c8ecb83f7686fc8e.bindTooltip(
+                `<div>
+                     Lula: 871 votos (40.06%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_163e007aa70087ec194fecff000a0817 = L.circle(
+                [-21.1276, -44.2412],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5609000000000001, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 51.478150704935004, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_b642109e5401eba081483a1cb281f568 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_43c42bf748394c9f757bee7f20e59896 = $(`<div id="html_43c42bf748394c9f757bee7f20e59896" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SEÇÃO ESPECIAL - ESC. MUN. PROF. ELPIDIO RAMALHO<br><b>Votos:</b> 106 (41.09%)<br><b>Seções:</b> 229</div>`)[0];
+                popup_b642109e5401eba081483a1cb281f568.setContent(html_43c42bf748394c9f757bee7f20e59896);
+            
+        
+
+        circle_163e007aa70087ec194fecff000a0817.bindPopup(popup_b642109e5401eba081483a1cb281f568)
+        ;
+
+        
+    
+    
+            circle_163e007aa70087ec194fecff000a0817.bindTooltip(
+                `<div>
+                     Lula: 106 votos (41.09%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_308a76543dca415e9887079a9f6dbf9b = L.circle(
+                [-21.1397, -44.2605],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.7377, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 57.87918451395113, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_e650cff050b2e08828df45e3870a1b86 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_aa4a17039ddfd2d484284854d50dbfc2 = $(`<div id="html_aa4a17039ddfd2d484284854d50dbfc2" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SEÇÃO ESPECIAL - UFSJ CAMPUS SANTO ANTONIO<br><b style="color: #fca503;">Votos: 134 (58.77%)</b><br><b>Seções:</b> 203</div>`)[0];
+                popup_e650cff050b2e08828df45e3870a1b86.setContent(html_aa4a17039ddfd2d484284854d50dbfc2);
+            
+        
+
+        circle_308a76543dca415e9887079a9f6dbf9b.bindPopup(popup_e650cff050b2e08828df45e3870a1b86)
+        ;
+
+        
+    
+    
+            circle_308a76543dca415e9887079a9f6dbf9b.bindTooltip(
+                `<div>
+                     Lula: 134 votos (58.77%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_71fc70c4a6bd57c48c5e18f346c5724d = L.circle(
+                [-21.1376, -44.2538],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6987, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 90.41570660012562, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_fcfe2e75aa7acd0a509294cbbd57fe1f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d64c76ae07e775740e1a2b8dd6e85af2 = $(`<div id="html_d64c76ae07e775740e1a2b8dd6e85af2" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> SOCIEDADE SINFONICA<br><b style="color: #fca503;">Votos: 327 (54.87%)</b><br><b>Seções:</b> 80, 79</div>`)[0];
+                popup_fcfe2e75aa7acd0a509294cbbd57fe1f.setContent(html_d64c76ae07e775740e1a2b8dd6e85af2);
+            
+        
+
+        circle_71fc70c4a6bd57c48c5e18f346c5724d.bindPopup(popup_fcfe2e75aa7acd0a509294cbbd57fe1f)
+        ;
+
+        
+    
+    
+            circle_71fc70c4a6bd57c48c5e18f346c5724d.bindTooltip(
+                `<div>
+                     Lula: 327 votos (54.87%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_b4b0fe07ecc6fade39fd9af4af394c02 = L.circle(
+                [-21.1383, -44.2611],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6653, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 114.34596626029273, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_d242278fe3de54108299fa248e9881a6 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8a4ba407619543d83c1567db31e6ede3 = $(`<div id="html_8a4ba407619543d83c1567db31e6ede3" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> UFSJ  - CAMPUS SANTO ANTONIO<br><b style="color: #fca503;">Votos: 523 (51.53%)</b><br><b>Seções:</b> 75, 76, 77, 78, 56</div>`)[0];
+                popup_d242278fe3de54108299fa248e9881a6.setContent(html_8a4ba407619543d83c1567db31e6ede3);
+            
+        
+
+        circle_b4b0fe07ecc6fade39fd9af4af394c02.bindPopup(popup_d242278fe3de54108299fa248e9881a6)
+        ;
+
+        
+    
+    
+            circle_b4b0fe07ecc6fade39fd9af4af394c02.bindTooltip(
+                `<div>
+                     Lula: 523 votos (51.53%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_c0fb327551da33d48fc8a9da1de9067f = L.circle(
+                [-21.1046, -44.2497],
+                {"bubblingMouseEvents": true, "color": "#ff0000", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.5761, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 49.49747468305833, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_41a52378b77d6daac10907dd4eb0193f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f4aede8ecaa46bc68c6f0a8825fb8e93 = $(`<div id="html_f4aede8ecaa46bc68c6f0a8825fb8e93" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> UFSJ - CAMPUS CTAN<br><b>Votos:</b> 98 (42.61%)<br><b>Seções:</b> 156</div>`)[0];
+                popup_41a52378b77d6daac10907dd4eb0193f.setContent(html_f4aede8ecaa46bc68c6f0a8825fb8e93);
+            
+        
+
+        circle_c0fb327551da33d48fc8a9da1de9067f.bindPopup(popup_41a52378b77d6daac10907dd4eb0193f)
+        ;
+
+        
+    
+    
+            circle_c0fb327551da33d48fc8a9da1de9067f.bindTooltip(
+                `<div>
+                     Lula: 98 votos (42.61%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_044c9b6a86a6e6dd21ecd8064ba9bc1e = L.circle(
+                [-21.1245, -44.251],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.7373, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 167.63054614240212, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_7d1470c494f0b5ccf34f2e913ec76b55 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1de8542986848fcf74f83bbd4bf97994 = $(`<div id="html_1de8542986848fcf74f83bbd4bf97994" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> UFSJ - CAMPUS DOM BOSCO<br><b style="color: #fca503;">Votos: 1124 (58.73%)</b><br><b>Seções:</b> 133, 134, 149, 345, 125, 126, 127</div>`)[0];
+                popup_7d1470c494f0b5ccf34f2e913ec76b55.setContent(html_1de8542986848fcf74f83bbd4bf97994);
+            
+        
+
+        circle_044c9b6a86a6e6dd21ecd8064ba9bc1e.bindPopup(popup_7d1470c494f0b5ccf34f2e913ec76b55)
+        ;
+
+        
+    
+    
+            circle_044c9b6a86a6e6dd21ecd8064ba9bc1e.bindTooltip(
+                `<div>
+                     Lula: 1124 votos (58.73%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_eb13abe4d26de0250bd70bca13bcb95a = L.circle(
+                [-21.1326, -44.2606],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ff0000", "fillOpacity": 0.6363, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 72.97259759663211, "stroke": true, "weight": 3}
+            ).addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+        var popup_bdf854f134d8f64b66e435013cdc8067 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_24a8cc9b93bb4257e9d9e0880e41144f = $(`<div id="html_24a8cc9b93bb4257e9d9e0880e41144f" style="width: 100.0%; height: 100.0%;"><h3 style="color: #ff0000;"><b>Lula</b></h3><br><b>Local:</b> UNIDADE REGIONAL DE SAÚDE (ANTIGO CENTRO DE SAÚDE)<br><b style="color: #fca503;">Votos: 213 (48.63%)</b><br><b>Seções:</b> 181, 182</div>`)[0];
+                popup_bdf854f134d8f64b66e435013cdc8067.setContent(html_24a8cc9b93bb4257e9d9e0880e41144f);
+            
+        
+
+        circle_eb13abe4d26de0250bd70bca13bcb95a.bindPopup(popup_bdf854f134d8f64b66e435013cdc8067)
+        ;
+
+        
+    
+    
+            circle_eb13abe4d26de0250bd70bca13bcb95a.bindTooltip(
+                `<div>
+                     Lula: 213 votos (48.63%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var map_ef2f8eaf87f46ecd10588d1ab3d3872d = L.map(
+                "map_ef2f8eaf87f46ecd10588d1ab3d3872d",
+                {
+                    center: [-21.1365, -44.2619],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "maxBounds": [
+[
+-20.1365,
+-43.2619,
+],
+[
+-22.1365,
+-45.2619,
+],
+],
+  "zoom": 14,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+
+            
+
+        
+    
+            var tile_layer_d48d944410d6aea6137536f1eade5126 = L.tileLayer(
+                "https://tile.openstreetmap.de/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "\u00a9 OpenStreetMap contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d48d944410d6aea6137536f1eade5126.addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+            var circle_fa1b41a5a93413a7492491ac6d7070c4 = L.circle(
+                [-21.1207, -44.2465],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6538, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 100.2496882788171, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_e4109b792fad0f15b8c71eb66c4ddcf5 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_28ddd5bf7c7ffe69052cfe1d7ee7c806 = $(`<div id="html_28ddd5bf7c7ffe69052cfe1d7ee7c806" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ANTIGO PREDIO DO UNIPTAN-FUNDOS<br><b style="color: #fca503;">Votos: 402 (50.38%)</b><br><b>Seções:</b> 136, 201, 135</div>`)[0];
+                popup_e4109b792fad0f15b8c71eb66c4ddcf5.setContent(html_28ddd5bf7c7ffe69052cfe1d7ee7c806);
+            
+        
+
+        circle_fa1b41a5a93413a7492491ac6d7070c4.bindPopup(popup_e4109b792fad0f15b8c71eb66c4ddcf5)
+        ;
+
+        
+    
+    
+            circle_fa1b41a5a93413a7492491ac6d7070c4.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 402 votos (50.38%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_e15ed6569d25e2df2639f6dc9fed5ea1 = L.circle(
+                [-21.105, -44.3427],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6106, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 52.67826876426369, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_e7095c6a30c8961088fb519d8d584144 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_bc12b5831d9df4300b4c59fa1c214483 = $(`<div id="html_bc12b5831d9df4300b4c59fa1c214483" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ASSOCIAÇÃO DE MORADORES E PRODUTORES RURAIS DE SÃO GONÇALO DO AMARANTE<br><b>Votos:</b> 111 (46.06%)<br><b>Seções:</b> 190</div>`)[0];
+                popup_e7095c6a30c8961088fb519d8d584144.setContent(html_bc12b5831d9df4300b4c59fa1c214483);
+            
+        
+
+        circle_e15ed6569d25e2df2639f6dc9fed5ea1.bindPopup(popup_e7095c6a30c8961088fb519d8d584144)
+        ;
+
+        
+    
+    
+            circle_e15ed6569d25e2df2639f6dc9fed5ea1.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 111 votos (46.06%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_b6a84b8162d672a668ac4d8318ec2bba = L.circle(
+                [-21.1372, -44.2657],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6334000000000001, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 63.24555320336759, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_4e56a2a6a80fb64647627c414e3e2d23 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_66e94bb34e1f799279f718b66ea2713f = $(`<div id="html_66e94bb34e1f799279f718b66ea2713f" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> BANDA TEODORO DE FARIA<br><b>Votos:</b> 160 (48.34%)<br><b>Seções:</b> 81</div>`)[0];
+                popup_4e56a2a6a80fb64647627c414e3e2d23.setContent(html_66e94bb34e1f799279f718b66ea2713f);
+            
+        
+
+        circle_b6a84b8162d672a668ac4d8318ec2bba.bindPopup(popup_4e56a2a6a80fb64647627c414e3e2d23)
+        ;
+
+        
+    
+    
+            circle_b6a84b8162d672a668ac4d8318ec2bba.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 160 votos (48.34%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_7a0e4160a4303cca60afcd3012870c80 = L.circle(
+                [-21.3746, -44.4135],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 43.30127018922194, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_c3362b7c556a84a2f38dd8695360272f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_fe9cbfe345b2951286c24c3290588f2b = $(`<div id="html_fe9cbfe345b2951286c24c3290588f2b" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> CAPELA DA C0MUNIDADE DO ZUEIRA<br><b style="color: #fca503;">Votos: 75 (89.29%)</b><br><b>Seções:</b> 186</div>`)[0];
+                popup_c3362b7c556a84a2f38dd8695360272f.setContent(html_fe9cbfe345b2951286c24c3290588f2b);
+            
+        
+
+        circle_7a0e4160a4303cca60afcd3012870c80.bindPopup(popup_c3362b7c556a84a2f38dd8695360272f)
+        ;
+
+        
+    
+    
+            circle_7a0e4160a4303cca60afcd3012870c80.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 75 votos (89.29%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_11e8fa90c2e7f219409b9275e0bc4bb9 = L.circle(
+                [-21.3727, -44.479],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.7233, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 32.78719262151, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_c0622b66c5c221a8adaf95670a1652ac = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4886e2da902be8cfe93255392337fbff = $(`<div id="html_4886e2da902be8cfe93255392337fbff" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> CAPELA DO VALO NOVO<br><b style="color: #fca503;">Votos: 43 (57.33%)</b><br><b>Seções:</b> 173</div>`)[0];
+                popup_c0622b66c5c221a8adaf95670a1652ac.setContent(html_4886e2da902be8cfe93255392337fbff);
+            
+        
+
+        circle_11e8fa90c2e7f219409b9275e0bc4bb9.bindPopup(popup_c0622b66c5c221a8adaf95670a1652ac)
+        ;
+
+        
+    
+    
+            circle_11e8fa90c2e7f219409b9275e0bc4bb9.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 43 votos (57.33%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_fa3ec41efa041f0dea30d938ccda4400 = L.circle(
+                [-21.2587, -44.2011],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 39.05124837953327, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_da578e81fddc2f7c9106ed5e79bc9739 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_66401385a4be10ec49aed0f1ff65c086 = $(`<div id="html_66401385a4be10ec49aed0f1ff65c086" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> CASA PAROQUIAL CAPELA MORRO GRANDE<br><b style="color: #fca503;">Votos: 61 (64.89%)</b><br><b>Seções:</b> 225</div>`)[0];
+                popup_da578e81fddc2f7c9106ed5e79bc9739.setContent(html_66401385a4be10ec49aed0f1ff65c086);
+            
+        
+
+        circle_fa3ec41efa041f0dea30d938ccda4400.bindPopup(popup_da578e81fddc2f7c9106ed5e79bc9739)
+        ;
+
+        
+    
+    
+            circle_fa3ec41efa041f0dea30d938ccda4400.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 61 votos (64.89%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_dfa534306ca21e128f81a68d91c5467d = L.circle(
+                [-21.1406, -44.2679],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6297, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 104.64224768228175, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_446336c21746f4d0e321aa9cc0f83247 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0052f2771741042858b81c4c9212063e = $(`<div id="html_0052f2771741042858b81c4c9212063e" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> CENTRO EDUC. FREI SERÁFICO<br><b style="color: #fca503;">Votos: 438 (47.97%)</b><br><b>Seções:</b> 99, 204, 183</div>`)[0];
+                popup_446336c21746f4d0e321aa9cc0f83247.setContent(html_0052f2771741042858b81c4c9212063e);
+            
+        
+
+        circle_dfa534306ca21e128f81a68d91c5467d.bindPopup(popup_446336c21746f4d0e321aa9cc0f83247)
+        ;
+
+        
+    
+    
+            circle_dfa534306ca21e128f81a68d91c5467d.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 438 votos (47.97%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_7312e3e29d6e5a340d9856b2b8a8a094 = L.circle(
+                [-21.1436, -44.2583],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.5566, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 72.62919523166974, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_7c1a2ceb77c698d53e4fc4c2aad8f042 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6ddfe1b39dd867cb63041c13e3bb3a6c = $(`<div id="html_6ddfe1b39dd867cb63041c13e3bb3a6c" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> CENTRO SOCIAL SAO FRANCISCO<br><b>Votos:</b> 211 (40.66%)<br><b>Seções:</b> 102, 103</div>`)[0];
+                popup_7c1a2ceb77c698d53e4fc4c2aad8f042.setContent(html_6ddfe1b39dd867cb63041c13e3bb3a6c);
+            
+        
+
+        circle_7312e3e29d6e5a340d9856b2b8a8a094.bindPopup(popup_7c1a2ceb77c698d53e4fc4c2aad8f042)
+        ;
+
+        
+    
+    
+            circle_7312e3e29d6e5a340d9856b2b8a8a094.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 211 votos (40.66%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_4e62f6d0f4ab45b5d7f1f102a127a228 = L.circle(
+                [-21.1384, -44.2656],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6089, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 94.47221813845593, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_f64756efe65f319c629acf88e5102abc = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f1689ebb11a55a0e76668bb3948afd70 = $(`<div id="html_f1689ebb11a55a0e76668bb3948afd70" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> CESEC<br><b>Votos:</b> 357 (45.89%)<br><b>Seções:</b> 93, 94, 95</div>`)[0];
+                popup_f64756efe65f319c629acf88e5102abc.setContent(html_f1689ebb11a55a0e76668bb3948afd70);
+            
+        
+
+        circle_4e62f6d0f4ab45b5d7f1f102a127a228.bindPopup(popup_f64756efe65f319c629acf88e5102abc)
+        ;
+
+        
+    
+    
+            circle_4e62f6d0f4ab45b5d7f1f102a127a228.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 357 votos (45.89%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_d5369744b0951bc8eba9eba2964714ff = L.circle(
+                [-21.1253, -44.2424],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.7136, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 138.4738242412623, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_3bffb25b05048f763cdc43d32db28a91 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ae54c9055ee15df0bc4de131eecd6e44 = $(`<div id="html_ae54c9055ee15df0bc4de131eecd6e44" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> COLEGIO ATUS (ANTIGA ESCOLA DEZ)<br><b style="color: #fca503;">Votos: 767 (56.36%)</b><br><b>Seções:</b> 297, 298, 299, 300, 301</div>`)[0];
+                popup_3bffb25b05048f763cdc43d32db28a91.setContent(html_ae54c9055ee15df0bc4de131eecd6e44);
+            
+        
+
+        circle_d5369744b0951bc8eba9eba2964714ff.bindPopup(popup_3bffb25b05048f763cdc43d32db28a91)
+        ;
+
+        
+    
+    
+            circle_d5369744b0951bc8eba9eba2964714ff.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 767 votos (56.36%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_b55e8a4c1e3cbcb2606d141dfd13c9c0 = L.circle(
+                [-21.1361, -44.2572],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.7000000000000001, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 215.17434791350013, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_b64aa601b0679c6c04941a58d1c627c3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_38dadb6a37396d1d1be93318768caf56 = $(`<div id="html_38dadb6a37396d1d1be93318768caf56" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> COLEGIO NOSSA SENHORA DAS DORES<br><b style="color: #fca503;">Votos: 1852 (55.0%)</b><br><b>Seções:</b> 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54</div>`)[0];
+                popup_b64aa601b0679c6c04941a58d1c627c3.setContent(html_38dadb6a37396d1d1be93318768caf56);
+            
+        
+
+        circle_b55e8a4c1e3cbcb2606d141dfd13c9c0.bindPopup(popup_b64aa601b0679c6c04941a58d1c627c3)
+        ;
+
+        
+    
+    
+            circle_b55e8a4c1e3cbcb2606d141dfd13c9c0.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 1852 votos (55.0%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_3e0063548eb14097834732b1660a45f7 = L.circle(
+                [-21.1341, -44.2426],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.7068, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 136.93063937629154, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_f1ab1914ec3921ec362a3d4dd83c06a9 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_3875260201582908307293a9adc9b714 = $(`<div id="html_3875260201582908307293a9adc9b714" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> COLÉGIO TIRADENTES PMMG<br><b style="color: #fca503;">Votos: 750 (55.68%)</b><br><b>Seções:</b> 302, 303, 304, 305, 318</div>`)[0];
+                popup_f1ab1914ec3921ec362a3d4dd83c06a9.setContent(html_3875260201582908307293a9adc9b714);
+            
+        
+
+        circle_3e0063548eb14097834732b1660a45f7.bindPopup(popup_f1ab1914ec3921ec362a3d4dd83c06a9)
+        ;
+
+        
+    
+    
+            circle_3e0063548eb14097834732b1660a45f7.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 750 votos (55.68%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_3111d0fa2cf17ec6163c0f6862d0ee3c = L.circle(
+                [-21.1293, -44.2434],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6909000000000001, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 58.949130612757976, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_2b8a8edc7d4d1d03403b558bf2deea8a = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0482fa0d3e4d38e739e72edcf9f6c5cc = $(`<div id="html_0482fa0d3e4d38e739e72edcf9f6c5cc" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESC. MUN. PROF. ELPIDIO RAMALHO<br><b style="color: #fca503;">Votos: 139 (54.09%)</b><br><b>Seções:</b> 227</div>`)[0];
+                popup_2b8a8edc7d4d1d03403b558bf2deea8a.setContent(html_0482fa0d3e4d38e739e72edcf9f6c5cc);
+            
+        
+
+        circle_3111d0fa2cf17ec6163c0f6862d0ee3c.bindPopup(popup_2b8a8edc7d4d1d03403b558bf2deea8a)
+        ;
+
+        
+    
+    
+            circle_3111d0fa2cf17ec6163c0f6862d0ee3c.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 139 votos (54.09%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_e6ba0ea351399500311979b81b602543 = L.circle(
+                [-21.129, -44.2506],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6422, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 156.68439615992398, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_c22ab43434d72f497bb25ef9cbc44980 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9190ae5537e94a0ed7f6f9daba4cb002 = $(`<div id="html_9190ae5537e94a0ed7f6f9daba4cb002" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA ESTADUAL AURELIANO PIMENTEL<br><b style="color: #fca503;">Votos: 982 (49.22%)</b><br><b>Seções:</b> 118, 119, 120, 121, 122, 123, 124</div>`)[0];
+                popup_c22ab43434d72f497bb25ef9cbc44980.setContent(html_9190ae5537e94a0ed7f6f9daba4cb002);
+            
+        
+
+        circle_e6ba0ea351399500311979b81b602543.bindPopup(popup_c22ab43434d72f497bb25ef9cbc44980)
+        ;
+
+        
+    
+    
+            circle_e6ba0ea351399500311979b81b602543.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 982 votos (49.22%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_fe90ca2dccf3bf10d60564d0d39f28c3 = L.circle(
+                [-21.1009, -44.2274],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6719, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 167.18253497300486, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_bfac37e73e1328223580d1e9c375cfdd = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d80a3e749a7a6e6b57a7fe6c7f5eba78 = $(`<div id="html_d80a3e749a7a6e6b57a7fe6c7f5eba78" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA ESTADUAL BRIGHENTHI CESARE<br><b style="color: #fca503;">Votos: 1118 (52.19%)</b><br><b>Seções:</b> 205, 206, 207, 208, 209, 210, 343</div>`)[0];
+                popup_bfac37e73e1328223580d1e9c375cfdd.setContent(html_d80a3e749a7a6e6b57a7fe6c7f5eba78);
+            
+        
+
+        circle_fe90ca2dccf3bf10d60564d0d39f28c3.bindPopup(popup_bfac37e73e1328223580d1e9c375cfdd)
+        ;
+
+        
+    
+    
+            circle_fe90ca2dccf3bf10d60564d0d39f28c3.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 1118 votos (52.19%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_ea96fac8e4d1bf46bfb9a67ae79b411e = L.circle(
+                [-21.1421, -44.2659],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6029, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 121.14041439585718, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_4e6cbe7686777d61945aa6d9768bd7af = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6effadc70ac3ba3ab5b9e5c247c6c935 = $(`<div id="html_6effadc70ac3ba3ab5b9e5c247c6c935" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA ESTADUAL CONEGO OSWALDO LUSTOSA<br><b>Votos:</b> 587 (45.29%)<br><b>Seções:</b> 112, 113, 114, 115, 342</div>`)[0];
+                popup_4e6cbe7686777d61945aa6d9768bd7af.setContent(html_6effadc70ac3ba3ab5b9e5c247c6c935);
+            
+        
+
+        circle_ea96fac8e4d1bf46bfb9a67ae79b411e.bindPopup(popup_4e6cbe7686777d61945aa6d9768bd7af)
+        ;
+
+        
+    
+    
+            circle_ea96fac8e4d1bf46bfb9a67ae79b411e.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 587 votos (45.29%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_b54a4bade12fc090372f827851284d43 = L.circle(
+                [-21.1277, -44.2355],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6965, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 135.46217184144066, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_3cd569acf5645997bf835212cfdcb0fa = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_eff8ab359433006dce415fd4045323d3 = $(`<div id="html_eff8ab359433006dce415fd4045323d3" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA ESTADUAL DEPUTADO MATEUS SALOMÉ<br><b style="color: #fca503;">Votos: 734 (54.65%)</b><br><b>Seções:</b> 292, 293, 294, 295, 296</div>`)[0];
+                popup_3cd569acf5645997bf835212cfdcb0fa.setContent(html_eff8ab359433006dce415fd4045323d3);
+            
+        
+
+        circle_b54a4bade12fc090372f827851284d43.bindPopup(popup_3cd569acf5645997bf835212cfdcb0fa)
+        ;
+
+        
+    
+    
+            circle_b54a4bade12fc090372f827851284d43.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 734 votos (54.65%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_3aa4a179c326377a39a4c826e5e58100 = L.circle(
+                [-21.1187, -44.2454],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.652, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 160.0, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_7882160c01aeae3c37c3c24f8b3fcb6a = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9e1b28d438eac67f56b7ef2189825b16 = $(`<div id="html_9e1b28d438eac67f56b7ef2189825b16" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA ESTADUAL DR GARCIA DE LIMA<br><b style="color: #fca503;">Votos: 1024 (50.2%)</b><br><b>Seções:</b> 128, 129, 130, 131, 132, 116, 117</div>`)[0];
+                popup_7882160c01aeae3c37c3c24f8b3fcb6a.setContent(html_9e1b28d438eac67f56b7ef2189825b16);
+            
+        
+
+        circle_3aa4a179c326377a39a4c826e5e58100.bindPopup(popup_7882160c01aeae3c37c3c24f8b3fcb6a)
+        ;
+
+        
+    
+    
+            circle_3aa4a179c326377a39a4c826e5e58100.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 1024 votos (50.2%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_6eda8b5d699818ca090213aa91dc5289 = L.circle(
+                [-21.1895, -44.3262],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.48260000000000003, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 105.71187255932986, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_fbe6184e58a2ab638a4e0c6acbce656e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0457ad0e63885558845e03c0df7f5910 = $(`<div id="html_0457ad0e63885558845e03c0df7f5910" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA ESTADUAL EVANDRO AVILA<br><b>Votos:</b> 447 (33.26%)<br><b>Seções:</b> 174, 175, 176, 177, 336</div>`)[0];
+                popup_fbe6184e58a2ab638a4e0c6acbce656e.setContent(html_0457ad0e63885558845e03c0df7f5910);
+            
+        
+
+        circle_6eda8b5d699818ca090213aa91dc5289.bindPopup(popup_fbe6184e58a2ab638a4e0c6acbce656e)
+        ;
+
+        
+    
+    
+            circle_6eda8b5d699818ca090213aa91dc5289.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 447 votos (33.26%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_c376c461cd158256a4ef1e122af5a4b8 = L.circle(
+                [-21.1284, -44.2341],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.7183, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 185.27007313648906, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_283c0e8d2f66fa3303d510e7edf1126c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_bacbf6d7a2036fac19bb1617233df1e9 = $(`<div id="html_bacbf6d7a2036fac19bb1617233df1e9" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA ESTADUAL GOVERNADOR MILTON CAMPOS<br><b style="color: #fca503;">Votos: 1373 (56.83%)</b><br><b>Seções:</b> 320, 321, 322, 323, 324, 325, 326, 319</div>`)[0];
+                popup_283c0e8d2f66fa3303d510e7edf1126c.setContent(html_bacbf6d7a2036fac19bb1617233df1e9);
+            
+        
+
+        circle_c376c461cd158256a4ef1e122af5a4b8.bindPopup(popup_283c0e8d2f66fa3303d510e7edf1126c)
+        ;
+
+        
+    
+    
+            circle_c376c461cd158256a4ef1e122af5a4b8.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 1373 votos (56.83%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_5a1b5e4efab10e0fe31400c891c3515b = L.circle(
+                [-21.143, -44.274],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.5583, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 167.7050983124842, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_53256bc024b7aacbb99c41d1cbeedf39 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_afcb04a2d2ef5274c083ce90187f21b4 = $(`<div id="html_afcb04a2d2ef5274c083ce90187f21b4" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA ESTADUAL IAGO PIMENTEL<br><b>Votos:</b> 1125 (40.83%)<br><b>Seções:</b> 197, 200, 86, 87, 88, 89, 90, 91, 92</div>`)[0];
+                popup_53256bc024b7aacbb99c41d1cbeedf39.setContent(html_afcb04a2d2ef5274c083ce90187f21b4);
+            
+        
+
+        circle_5a1b5e4efab10e0fe31400c891c3515b.bindPopup(popup_53256bc024b7aacbb99c41d1cbeedf39)
+        ;
+
+        
+    
+    
+            circle_5a1b5e4efab10e0fe31400c891c3515b.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 1125 votos (40.83%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_68ba84de5702d31ecc3d0d0dee57c97e = L.circle(
+                [-21.1275, -44.2646],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.5461, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 146.9693845669907, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_ba78c924a8b7ab2b90ad1371464fee2b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9860a4c4fe6223d313d6bfa44c0cdf10 = $(`<div id="html_9860a4c4fe6223d313d6bfa44c0cdf10" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA ESTADUAL IDALINA HORTA GALVAO<br><b>Votos:</b> 864 (39.61%)<br><b>Seções:</b> 141, 142, 143, 144, 145, 146, 147, 148</div>`)[0];
+                popup_ba78c924a8b7ab2b90ad1371464fee2b.setContent(html_9860a4c4fe6223d313d6bfa44c0cdf10);
+            
+        
+
+        circle_68ba84de5702d31ecc3d0d0dee57c97e.bindPopup(popup_ba78c924a8b7ab2b90ad1371464fee2b)
+        ;
+
+        
+    
+    
+            circle_68ba84de5702d31ecc3d0d0dee57c97e.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 864 votos (39.61%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_ab0aa1ad6576a1366f46cef58ff19be7 = L.circle(
+                [-21.1405, -44.258],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.586, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 157.63882770434446, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_4444865a5f57a3b4482ba422fa7289f9 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_59140a3d44df4128f237913086d6e304 = $(`<div id="html_59140a3d44df4128f237913086d6e304" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA ESTADUAL INACIO PASSOS<br><b>Votos:</b> 994 (43.6%)<br><b>Seções:</b> 198, 104, 105, 106, 107, 108, 109, 111</div>`)[0];
+                popup_4444865a5f57a3b4482ba422fa7289f9.setContent(html_59140a3d44df4128f237913086d6e304);
+            
+        
+
+        circle_ab0aa1ad6576a1366f46cef58ff19be7.bindPopup(popup_4444865a5f57a3b4482ba422fa7289f9)
+        ;
+
+        
+    
+    
+            circle_ab0aa1ad6576a1366f46cef58ff19be7.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 994 votos (43.6%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_8cda645a7b27dec5ef43871ef27a9e3f = L.circle(
+                [-21.1268, -44.2545],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.5485, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 115.10864433221337, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_333a52ff268fe990e45fea02a38f3f25 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ed028a8b8cdb6d911c6afe6b42300247 = $(`<div id="html_ed028a8b8cdb6d911c6afe6b42300247" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA ESTADUAL MINISTRO GABRIEL PASSOS<br><b>Votos:</b> 530 (39.85%)<br><b>Seções:</b> 202, 150, 151, 152, 153</div>`)[0];
+                popup_333a52ff268fe990e45fea02a38f3f25.setContent(html_ed028a8b8cdb6d911c6afe6b42300247);
+            
+        
+
+        circle_8cda645a7b27dec5ef43871ef27a9e3f.bindPopup(popup_333a52ff268fe990e45fea02a38f3f25)
+        ;
+
+        
+    
+    
+            circle_8cda645a7b27dec5ef43871ef27a9e3f.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 530 votos (39.85%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_620ac4e41708ea8f424c8c62faab3ff3 = L.circle(
+                [-21.2473, -44.4174],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6608, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 121.55245781143219, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_f1072146426d4daa334d25ac57a7b102 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c8e258d460577732abebbfef4f464574 = $(`<div id="html_c8e258d460577732abebbfef4f464574" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA ESTADUAL PADRE LOPES<br><b style="color: #fca503;">Votos: 591 (51.08%)</b><br><b>Seções:</b> 165, 166, 167, 168, 169</div>`)[0];
+                popup_f1072146426d4daa334d25ac57a7b102.setContent(html_c8e258d460577732abebbfef4f464574);
+            
+        
+
+        circle_620ac4e41708ea8f424c8c62faab3ff3.bindPopup(popup_f1072146426d4daa334d25ac57a7b102)
+        ;
+
+        
+    
+    
+            circle_620ac4e41708ea8f424c8c62faab3ff3.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 591 votos (51.08%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_69649e881cb651c7c06756c27f1e9d79 = L.circle(
+                [-21.1288, -44.2401],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6662, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 185.87630295441105, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_a9b9df53857fb199791be529d6b82f99 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8a3c63664db4eb13d32177c9609259d8 = $(`<div id="html_8a3c63664db4eb13d32177c9609259d8" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA ESTADUAL TOMÉ PORTES DEL REI<br><b style="color: #fca503;">Votos: 1382 (51.62%)</b><br><b>Seções:</b> 288, 289, 290, 291, 308, 309, 284, 285, 286, 287</div>`)[0];
+                popup_a9b9df53857fb199791be529d6b82f99.setContent(html_8a3c63664db4eb13d32177c9609259d8);
+            
+        
+
+        circle_69649e881cb651c7c06756c27f1e9d79.bindPopup(popup_a9b9df53857fb199791be529d6b82f99)
+        ;
+
+        
+    
+    
+            circle_69649e881cb651c7c06756c27f1e9d79.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 1382 votos (51.62%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_a923d426186e962003a073b8abc25146 = L.circle(
+                [-21.1363, -44.2311],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6397999999999999, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 129.42179105544784, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_1eb0ee2dbf051f764c627e2b9267cc24 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_afa6cefa67c579494fa447d38753429d = $(`<div id="html_afa6cefa67c579494fa447d38753429d" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL BOM PASTOR (PIPOCAS DE MEL)<br><b style="color: #fca503;">Votos: 670 (48.98%)</b><br><b>Seções:</b> 307, 310, 311, 312, 313</div>`)[0];
+                popup_1eb0ee2dbf051f764c627e2b9267cc24.setContent(html_afa6cefa67c579494fa447d38753429d);
+            
+        
+
+        circle_a923d426186e962003a073b8abc25146.bindPopup(popup_1eb0ee2dbf051f764c627e2b9267cc24)
+        ;
+
+        
+    
+    
+            circle_a923d426186e962003a073b8abc25146.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 670 votos (48.98%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_377eb63effa289ae6a2779ac23dccc6a = L.circle(
+                [-21.115, -44.2244],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6829000000000001, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 135.83077707206124, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_7d64b75bab804f950b95e53ba5879b81 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7c5ae14e210821cf0bd5cc9de22a3f5e = $(`<div id="html_7c5ae14e210821cf0bd5cc9de22a3f5e" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL CELSO RAIMUNDO DA SILVA<br><b style="color: #fca503;">Votos: 738 (53.29%)</b><br><b>Seções:</b> 341, 314, 315, 316, 317</div>`)[0];
+                popup_7d64b75bab804f950b95e53ba5879b81.setContent(html_7c5ae14e210821cf0bd5cc9de22a3f5e);
+            
+        
+
+        circle_377eb63effa289ae6a2779ac23dccc6a.bindPopup(popup_7d64b75bab804f950b95e53ba5879b81)
+        ;
+
+        
+    
+    
+            circle_377eb63effa289ae6a2779ac23dccc6a.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 738 votos (53.29%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_d38040f588aef495ff2a7e5466f2cc0d = L.circle(
+                [-21.115, -44.226],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6479, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 77.78174593052023, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_ce7f543cecb2baacd0ac81c43eeba73d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a982f4e497de7acb8317ccbe2b82ae9f = $(`<div id="html_a982f4e497de7acb8317ccbe2b82ae9f" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL CELSO RAIMUNDO DA SILVA<br><b style="color: #fca503;">Votos: 242 (49.79%)</b><br><b>Seções:</b> 329, 327</div>`)[0];
+                popup_ce7f543cecb2baacd0ac81c43eeba73d.setContent(html_a982f4e497de7acb8317ccbe2b82ae9f);
+            
+        
+
+        circle_d38040f588aef495ff2a7e5466f2cc0d.bindPopup(popup_ce7f543cecb2baacd0ac81c43eeba73d)
+        ;
+
+        
+    
+    
+            circle_d38040f588aef495ff2a7e5466f2cc0d.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 242 votos (49.79%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_e1ed98b7968c0d096d60d9b7e16fd23d = L.circle(
+                [-21.3043, -44.3184],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6775, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 82.00609733428364, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_3f1080cba0cd882bb74dbeff6d4bfa2c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_bfd9a05c1c45e0137868316074da90f0 = $(`<div id="html_bfd9a05c1c45e0137868316074da90f0" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL DE ARCÂNGELO<br><b style="color: #fca503;">Votos: 269 (52.75%)</b><br><b>Seções:</b> 157, 158</div>`)[0];
+                popup_3f1080cba0cd882bb74dbeff6d4bfa2c.setContent(html_bfd9a05c1c45e0137868316074da90f0);
+            
+        
+
+        circle_e1ed98b7968c0d096d60d9b7e16fd23d.bindPopup(popup_3f1080cba0cd882bb74dbeff6d4bfa2c)
+        ;
+
+        
+    
+    
+            circle_e1ed98b7968c0d096d60d9b7e16fd23d.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 269 votos (52.75%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_21192afc4ca0a992d53c6f5c3d5c874e = L.circle(
+                [-21.2933, -44.1206],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.5902000000000001, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 45.0, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_b857035f8741335f3feff30a9ef8310c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_88b69eec47115880b9629d65dd3085fe = $(`<div id="html_88b69eec47115880b9629d65dd3085fe" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL DE EMBOABAS<br><b>Votos:</b> 81 (44.02%)<br><b>Seções:</b> 333</div>`)[0];
+                popup_b857035f8741335f3feff30a9ef8310c.setContent(html_88b69eec47115880b9629d65dd3085fe);
+            
+        
+
+        circle_21192afc4ca0a992d53c6f5c3d5c874e.bindPopup(popup_b857035f8741335f3feff30a9ef8310c)
+        ;
+
+        
+    
+    
+            circle_21192afc4ca0a992d53c6f5c3d5c874e.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 81 votos (44.02%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_65fcf3ecb9a35d330d85754a43c987eb = L.circle(
+                [-21.1965, -44.3508],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.4234, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 42.720018726587654, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_84520b204b145642d3e54a2e4fd4b463 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6e474c9b4b45efc4111b4c06351329f7 = $(`<div id="html_6e474c9b4b45efc4111b4c06351329f7" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL DE GOIABEIRAS<br><b>Votos:</b> 73 (27.34%)<br><b>Seções:</b> 178</div>`)[0];
+                popup_84520b204b145642d3e54a2e4fd4b463.setContent(html_6e474c9b4b45efc4111b4c06351329f7);
+            
+        
+
+        circle_65fcf3ecb9a35d330d85754a43c987eb.bindPopup(popup_84520b204b145642d3e54a2e4fd4b463)
+        ;
+
+        
+    
+    
+            circle_65fcf3ecb9a35d330d85754a43c987eb.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 73 votos (27.34%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_48e8752e9054284f7c07054b0d9fbbb4 = L.circle(
+                [-21.1431, -44.263],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.5226, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 54.083269131959845, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_5183e3ca629390a54a26542288a5d2ce = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_985c8f467a9fe47b615f1628e518f2bd = $(`<div id="html_985c8f467a9fe47b615f1628e518f2bd" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL DOMINGOS HORTA<br><b>Votos:</b> 117 (37.26%)<br><b>Seções:</b> 110</div>`)[0];
+                popup_5183e3ca629390a54a26542288a5d2ce.setContent(html_985c8f467a9fe47b615f1628e518f2bd);
+            
+        
+
+        circle_48e8752e9054284f7c07054b0d9fbbb4.bindPopup(popup_5183e3ca629390a54a26542288a5d2ce)
+        ;
+
+        
+    
+    
+            circle_48e8752e9054284f7c07054b0d9fbbb4.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 117 votos (37.26%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_b145c3de78b157562555de709a8323ab = L.circle(
+                [-21.1416, -44.2762],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.5191, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 126.09520212918491, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_fd4529ebe43c901787e6ef1e9115d2ce = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c1b1e8eaf6c4198b9679341f6986fc5a = $(`<div id="html_c1b1e8eaf6c4198b9679341f6986fc5a" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL DR. KLEBER VASQUES  FILGUEIRAS<br><b>Votos:</b> 636 (36.91%)<br><b>Seções:</b> 100, 335, 82, 83, 84, 85</div>`)[0];
+                popup_fd4529ebe43c901787e6ef1e9115d2ce.setContent(html_c1b1e8eaf6c4198b9679341f6986fc5a);
+            
+        
+
+        circle_b145c3de78b157562555de709a8323ab.bindPopup(popup_fd4529ebe43c901787e6ef1e9115d2ce)
+        ;
+
+        
+    
+    
+            circle_b145c3de78b157562555de709a8323ab.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 636 votos (36.91%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_2bf15227b71c91cfdaca3400479e2864 = L.circle(
+                [-21.1375, -44.2583],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.7193, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 130.19216566291536, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_d0d74abe4ae3945762dfaea8d6f650c6 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_18b63da3743a820eb4db1ec0ee76732b = $(`<div id="html_18b63da3743a820eb4db1ec0ee76732b" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL MARIA TERESA<br><b style="color: #fca503;">Votos: 678 (56.93%)</b><br><b>Seções:</b> 67, 68, 69, 40, 41</div>`)[0];
+                popup_d0d74abe4ae3945762dfaea8d6f650c6.setContent(html_18b63da3743a820eb4db1ec0ee76732b);
+            
+        
+
+        circle_2bf15227b71c91cfdaca3400479e2864.bindPopup(popup_d0d74abe4ae3945762dfaea8d6f650c6)
+        ;
+
+        
+    
+    
+            circle_2bf15227b71c91cfdaca3400479e2864.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 678 votos (56.93%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_2698820af36f03bb48c8ba0f193c8a3d = L.circle(
+                [-21.1001, -44.2224],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.7033, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 116.72617529928752, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_9452903d61eee7ff0653960fdec5a9c1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4b0852c7c981448d16fda4320c27fdb9 = $(`<div id="html_4b0852c7c981448d16fda4320c27fdb9" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL MENINO JESUS<br><b style="color: #fca503;">Votos: 545 (55.33%)</b><br><b>Seções:</b> 211, 212, 213</div>`)[0];
+                popup_9452903d61eee7ff0653960fdec5a9c1.setContent(html_4b0852c7c981448d16fda4320c27fdb9);
+            
+        
+
+        circle_2698820af36f03bb48c8ba0f193c8a3d.bindPopup(popup_9452903d61eee7ff0653960fdec5a9c1)
+        ;
+
+        
+    
+    
+            circle_2698820af36f03bb48c8ba0f193c8a3d.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 545 votos (55.33%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_55637ac2fea6e1817502c99716284ac0 = L.circle(
+                [-21.1403, -44.2306],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6804, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 165.83123951777, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_e2bb53c15ad7a0f5beb88afdd5314fc9 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_684017df12e19fa6a594e6e99d08dc79 = $(`<div id="html_684017df12e19fa6a594e6e99d08dc79" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> ESCOLA MUNICIPAL PIO XII<br><b style="color: #fca503;">Votos: 1100 (53.04%)</b><br><b>Seções:</b> 232, 233, 234, 235, 236, 237, 339</div>`)[0];
+                popup_e2bb53c15ad7a0f5beb88afdd5314fc9.setContent(html_684017df12e19fa6a594e6e99d08dc79);
+            
+        
+
+        circle_55637ac2fea6e1817502c99716284ac0.bindPopup(popup_e2bb53c15ad7a0f5beb88afdd5314fc9)
+        ;
+
+        
+    
+    
+            circle_55637ac2fea6e1817502c99716284ac0.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 1100 votos (53.04%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_bdad5cc8e57c05077d7e6efbe2db8418 = L.circle(
+                [-21.0849, -44.2333],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.7326, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 80.77747210701756, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_2566628864f4e4c5a32f57953ad69b2b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_78838711d24f2e1f8fe887c59368acbc = $(`<div id="html_78838711d24f2e1f8fe887c59368acbc" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> GRUPO ESCOLAR MUNICIPAL PARADA DO GIAROLA<br><b style="color: #fca503;">Votos: 261 (58.26%)</b><br><b>Seções:</b> 230, 231</div>`)[0];
+                popup_2566628864f4e4c5a32f57953ad69b2b.setContent(html_78838711d24f2e1f8fe887c59368acbc);
+            
+        
+
+        circle_bdad5cc8e57c05077d7e6efbe2db8418.bindPopup(popup_2566628864f4e4c5a32f57953ad69b2b)
+        ;
+
+        
+    
+    
+            circle_bdad5cc8e57c05077d7e6efbe2db8418.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 261 votos (58.26%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_7546778de25aee3dc8c191534c47c976 = L.circle(
+                [-21.1114, -44.2374],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6678000000000001, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 112.91589790636215, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_679cc24733bc3550cc42d5a5edf4e9de = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ccb90393df8ebb6aa3ba0421ab7d22ec = $(`<div id="html_ccb90393df8ebb6aa3ba0421ab7d22ec" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> IGREJA NOSSA SENHORA DA CONCEIÇÃO<br><b style="color: #fca503;">Votos: 510 (51.78%)</b><br><b>Seções:</b> 216, 214, 215</div>`)[0];
+                popup_679cc24733bc3550cc42d5a5edf4e9de.setContent(html_ccb90393df8ebb6aa3ba0421ab7d22ec);
+            
+        
+
+        circle_7546778de25aee3dc8c191534c47c976.bindPopup(popup_679cc24733bc3550cc42d5a5edf4e9de)
+        ;
+
+        
+    
+    
+            circle_7546778de25aee3dc8c191534c47c976.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 510 votos (51.78%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_b3b04e662c859590d2f4f22f7d2a17e3 = L.circle(
+                [-21.1436, -44.2797],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6246, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 117.36694594305503, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_b24e176d3360cfc2383e578ee6332f9d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ad04da464beb44e028a5cda3c9d682ce = $(`<div id="html_ad04da464beb44e028a5cda3c9d682ce" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> OBRAS SOCIAIS FE E ALEGRIA<br><b>Votos:</b> 551 (47.46%)<br><b>Seções:</b> 96, 97, 98, 199</div>`)[0];
+                popup_b24e176d3360cfc2383e578ee6332f9d.setContent(html_ad04da464beb44e028a5cda3c9d682ce);
+            
+        
+
+        circle_b3b04e662c859590d2f4f22f7d2a17e3.bindPopup(popup_b24e176d3360cfc2383e578ee6332f9d)
+        ;
+
+        
+    
+    
+            circle_b3b04e662c859590d2f4f22f7d2a17e3.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 551 votos (47.46%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_2c10d0b032db47f02ff8e36137c9cd76 = L.circle(
+                [-21.1324, -44.2655],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.46730000000000005, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 52.91502622129181, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_3ca9fef3078ddf01e2e3c93de8edfb43 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1eae3aa978b7d97452c21219b02aab6c = $(`<div id="html_1eae3aa978b7d97452c21219b02aab6c" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SALAO PAROQUIAL NOSSA SENHORA AUXILIADORA<br><b>Votos:</b> 112 (31.73%)<br><b>Seções:</b> 139, 140</div>`)[0];
+                popup_3ca9fef3078ddf01e2e3c93de8edfb43.setContent(html_1eae3aa978b7d97452c21219b02aab6c);
+            
+        
+
+        circle_2c10d0b032db47f02ff8e36137c9cd76.bindPopup(popup_3ca9fef3078ddf01e2e3c93de8edfb43)
+        ;
+
+        
+    
+    
+            circle_2c10d0b032db47f02ff8e36137c9cd76.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 112 votos (31.73%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_aea88933729c26dbded978c788b95eb7 = L.circle(
+                [-21.1262, -44.2573],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.5052, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 69.82120021884471, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_625e45ef89e8dc0f8e75074180fce333 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_2d0e6d7ed4ebe5738378c524b6e0d632 = $(`<div id="html_2d0e6d7ed4ebe5738378c524b6e0d632" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SALAO PAROQUIAL SAO GERALDO<br><b>Votos:</b> 195 (35.52%)<br><b>Seções:</b> 154, 155</div>`)[0];
+                popup_625e45ef89e8dc0f8e75074180fce333.setContent(html_2d0e6d7ed4ebe5738378c524b6e0d632);
+            
+        
+
+        circle_aea88933729c26dbded978c788b95eb7.bindPopup(popup_625e45ef89e8dc0f8e75074180fce333)
+        ;
+
+        
+    
+    
+            circle_aea88933729c26dbded978c788b95eb7.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 195 votos (35.52%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_71636b13a417f98ed09efa83c879a8cb = L.circle(
+                [-21.2122, -44.3583],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.3897, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 29.58039891549808, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_40495ecc9c023a5181d84b839cfd0e6d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_88679639e882792c98d07abab7c078fc = $(`<div id="html_88679639e882792c98d07abab7c078fc" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SALÃO COMUNITARIO DO CANELA<br><b>Votos:</b> 35 (23.97%)<br><b>Seções:</b> 179</div>`)[0];
+                popup_40495ecc9c023a5181d84b839cfd0e6d.setContent(html_88679639e882792c98d07abab7c078fc);
+            
+        
+
+        circle_71636b13a417f98ed09efa83c879a8cb.bindPopup(popup_40495ecc9c023a5181d84b839cfd0e6d)
+        ;
+
+        
+    
+    
+            circle_71636b13a417f98ed09efa83c879a8cb.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 35 votos (23.97%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_623ee443b987b8cdac4aca11ceebab7e = L.circle(
+                [-21.332, -44.5428],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.47530000000000006, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25.98076211353316, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_646a5777807f2fd48a7ed268993d9771 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_68d573b03d59ee1535dec09da000f7e6 = $(`<div id="html_68d573b03d59ee1535dec09da000f7e6" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SALÃO COMUNITARIO DO CAQUENDE<br><b>Votos:</b> 27 (32.53%)<br><b>Seções:</b> 185</div>`)[0];
+                popup_646a5777807f2fd48a7ed268993d9771.setContent(html_68d573b03d59ee1535dec09da000f7e6);
+            
+        
+
+        circle_623ee443b987b8cdac4aca11ceebab7e.bindPopup(popup_646a5777807f2fd48a7ed268993d9771)
+        ;
+
+        
+    
+    
+            circle_623ee443b987b8cdac4aca11ceebab7e.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 27 votos (32.53%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_0b60499aea6a77496631c15d694698ab = L.circle(
+                [-21.1141, -44.3748],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6676, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 33.166247903553995, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_beb933dfac666fe0adf504a77a0252e6 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8b22450df080b04ec0bd9b7457fe92b4 = $(`<div id="html_8b22450df080b04ec0bd9b7457fe92b4" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SALÃO COMUNITÁRIO DA IGREJA DE CAXAMBU<br><b style="color: #fca503;">Votos: 44 (51.76%)</b><br><b>Seções:</b> 192</div>`)[0];
+                popup_beb933dfac666fe0adf504a77a0252e6.setContent(html_8b22450df080b04ec0bd9b7457fe92b4);
+            
+        
+
+        circle_0b60499aea6a77496631c15d694698ab.bindPopup(popup_beb933dfac666fe0adf504a77a0252e6)
+        ;
+
+        
+    
+    
+            circle_0b60499aea6a77496631c15d694698ab.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 44 votos (51.76%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_bd6f4da9f96e937303396f675dcffe31 = L.circle(
+                [-21.3313, -44.4937],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 39.68626966596886, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_1f219960b978e032af862a15b93caf4c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_27ac2d941e0b4d12e6a0d67418bb9e47 = $(`<div id="html_27ac2d941e0b4d12e6a0d67418bb9e47" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SALÃO COMUNITÁRIO DO ENGENHO DE SERRA<br><b style="color: #fca503;">Votos: 63 (71.59%)</b><br><b>Seções:</b> 172</div>`)[0];
+                popup_1f219960b978e032af862a15b93caf4c.setContent(html_27ac2d941e0b4d12e6a0d67418bb9e47);
+            
+        
+
+        circle_bd6f4da9f96e937303396f675dcffe31.bindPopup(popup_1f219960b978e032af862a15b93caf4c)
+        ;
+
+        
+    
+    
+            circle_bd6f4da9f96e937303396f675dcffe31.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 63 votos (71.59%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_283f1cb55f165e733e4e1f730a98b215 = L.circle(
+                [-21.3422, -44.261],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6227, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 25.495097567963924, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_a800bbbc6b13a24ea904e21d59c80c1a = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_200882dafc1a2d599b3224abafcd51d0 = $(`<div id="html_200882dafc1a2d599b3224abafcd51d0" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SALÃO DA CAPELA DE SÃO BENEDITO<br><b style="color: #fca503;">Votos: 26 (47.27%)</b><br><b>Seções:</b> 163</div>`)[0];
+                popup_a800bbbc6b13a24ea904e21d59c80c1a.setContent(html_200882dafc1a2d599b3224abafcd51d0);
+            
+        
+
+        circle_283f1cb55f165e733e4e1f730a98b215.bindPopup(popup_a800bbbc6b13a24ea904e21d59c80c1a)
+        ;
+
+        
+    
+    
+            circle_283f1cb55f165e733e4e1f730a98b215.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 26 votos (47.27%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_b3324a254196fa354ebd58b071bda0ee = L.circle(
+                [-21.237, -44.3744],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.7376, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 53.38539126015655, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_e07b7468d303940a603da38db84202f3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_92e8f551bc7f2a1cff58de97b29cd034 = $(`<div id="html_92e8f551bc7f2a1cff58de97b29cd034" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SALÃO DA IGREJA DE SÃO JANUÁRIO<br><b style="color: #fca503;">Votos: 114 (58.76%)</b><br><b>Seções:</b> 171</div>`)[0];
+                popup_e07b7468d303940a603da38db84202f3.setContent(html_92e8f551bc7f2a1cff58de97b29cd034);
+            
+        
+
+        circle_b3324a254196fa354ebd58b071bda0ee.bindPopup(popup_e07b7468d303940a603da38db84202f3)
+        ;
+
+        
+    
+    
+            circle_b3324a254196fa354ebd58b071bda0ee.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 114 votos (58.76%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_920b3ac691985419d0914b30b61120cc = L.circle(
+                [-21.3317, -44.4435],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.7056, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 27.386127875258307, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_e37248b07acb240cff99d7371c1e6b48 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_09b5f045f9707b401a6796b74705fc44 = $(`<div id="html_09b5f045f9707b401a6796b74705fc44" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SALÃO PAROQUIAL DE CRUZEIRO DA BARRA<br><b style="color: #fca503;">Votos: 30 (55.56%)</b><br><b>Seções:</b> 180</div>`)[0];
+                popup_e37248b07acb240cff99d7371c1e6b48.setContent(html_09b5f045f9707b401a6796b74705fc44);
+            
+        
+
+        circle_920b3ac691985419d0914b30b61120cc.bindPopup(popup_e37248b07acb240cff99d7371c1e6b48)
+        ;
+
+        
+    
+    
+            circle_920b3ac691985419d0914b30b61120cc.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 30 votos (55.56%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_981fb3421faaa2774d2531bfb3964eb9 = L.circle(
+                [-21.1492, -44.3268],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6229, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 39.05124837953327, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_e8a50b20145d5e01e385a1c5c0fa2e80 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_df4ae319b120f8cfebba043fc5e01208 = $(`<div id="html_df4ae319b120f8cfebba043fc5e01208" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SALÃO PAROQUIAL DO FÉ<br><b>Votos:</b> 61 (47.29%)<br><b>Seções:</b> 193</div>`)[0];
+                popup_e8a50b20145d5e01e385a1c5c0fa2e80.setContent(html_df4ae319b120f8cfebba043fc5e01208);
+            
+        
+
+        circle_981fb3421faaa2774d2531bfb3964eb9.bindPopup(popup_e8a50b20145d5e01e385a1c5c0fa2e80)
+        ;
+
+        
+    
+    
+            circle_981fb3421faaa2774d2531bfb3964eb9.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 61 votos (47.29%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_3f1538fa8ae8a085d3c76ff51ab7f84f = L.circle(
+                [-21.1493, -44.3268],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6609, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 34.27827300200522, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_db9e24d9cea6ef0e4e235e8a82f88f49 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_e369d7855cebc2382dfb87868254da53 = $(`<div id="html_e369d7855cebc2382dfb87868254da53" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SALÃO PAROQUIAL DO POVOADO DA TRINDADE<br><b style="color: #fca503;">Votos: 47 (51.09%)</b><br><b>Seções:</b> 187</div>`)[0];
+                popup_db9e24d9cea6ef0e4e235e8a82f88f49.setContent(html_e369d7855cebc2382dfb87868254da53);
+            
+        
+
+        circle_3f1538fa8ae8a085d3c76ff51ab7f84f.bindPopup(popup_db9e24d9cea6ef0e4e235e8a82f88f49)
+        ;
+
+        
+    
+    
+            circle_3f1538fa8ae8a085d3c76ff51ab7f84f.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 47 votos (51.09%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_8cb064a897e41e2423ac89adc941b274 = L.circle(
+                [-21.1353, -44.2676],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.46209999999999996, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 64.61423991660043, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_b389fd3d0b4ab47f5bed8cbb36c4bcb3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f5106a1853aeb10da7071d9fe5ef740f = $(`<div id="html_f5106a1853aeb10da7071d9fe5ef740f" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SALÃO PAROQUIAL N SENHORA APARECIDA<br><b>Votos:</b> 167 (31.21%)<br><b>Seções:</b> 137, 138</div>`)[0];
+                popup_b389fd3d0b4ab47f5bed8cbb36c4bcb3.setContent(html_f5106a1853aeb10da7071d9fe5ef740f);
+            
+        
+
+        circle_8cb064a897e41e2423ac89adc941b274.bindPopup(popup_b389fd3d0b4ab47f5bed8cbb36c4bcb3)
+        ;
+
+        
+    
+    
+            circle_8cb064a897e41e2423ac89adc941b274.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 167 votos (31.21%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_819294b897787a00ae2c1d6681262e24 = L.circle(
+                [-21.3244, -44.0724],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6423, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 28.284271247461902, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_e82210fb158cd75c154afe1475fc44dc = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_df7421921e67b0c57f5581504fe4750c = $(`<div id="html_df7421921e67b0c57f5581504fe4750c" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SALÃO/GALPÃO DA IGREJA DA COMUNIDADE DE CANANEIA<br><b style="color: #fca503;">Votos: 32 (49.23%)</b><br><b>Seções:</b> 331</div>`)[0];
+                popup_e82210fb158cd75c154afe1475fc44dc.setContent(html_df7421921e67b0c57f5581504fe4750c);
+            
+        
+
+        circle_819294b897787a00ae2c1d6681262e24.bindPopup(popup_e82210fb158cd75c154afe1475fc44dc)
+        ;
+
+        
+    
+    
+            circle_819294b897787a00ae2c1d6681262e24.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 32 votos (49.23%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_ff71b07a9c5fb226bdbaa57a7a3571a6 = L.circle(
+                [-21.1268, -44.2404],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.7172000000000001, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 175.57049866079439, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_783351a931d7a648e38ea0dfff388643 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_061acd8dba2e45f7cdf2c544bb09e61e = $(`<div id="html_061acd8dba2e45f7cdf2c544bb09e61e" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SERVICO NACIONAL DE APRENDIZAGEM INDUSTRIAL SENAI<br><b style="color: #fca503;">Votos: 1233 (56.72%)</b><br><b>Seções:</b> 224, 217, 218, 219, 220, 221, 222, 223</div>`)[0];
+                popup_783351a931d7a648e38ea0dfff388643.setContent(html_061acd8dba2e45f7cdf2c544bb09e61e);
+            
+        
+
+        circle_ff71b07a9c5fb226bdbaa57a7a3571a6.bindPopup(popup_783351a931d7a648e38ea0dfff388643)
+        ;
+
+        
+    
+    
+            circle_ff71b07a9c5fb226bdbaa57a7a3571a6.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 1233 votos (56.72%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_f9495e02345b4ac2a9672f31f0e9f5d9 = L.circle(
+                [-21.1276, -44.2412],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.7198, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 60.6217782649107, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_319bf6044ab5d452790095077b604899 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5d09f181881f8fbd50ecaf90d269a67c = $(`<div id="html_5d09f181881f8fbd50ecaf90d269a67c" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SEÇÃO ESPECIAL - ESC. MUN. PROF. ELPIDIO RAMALHO<br><b style="color: #fca503;">Votos: 147 (56.98%)</b><br><b>Seções:</b> 229</div>`)[0];
+                popup_319bf6044ab5d452790095077b604899.setContent(html_5d09f181881f8fbd50ecaf90d269a67c);
+            
+        
+
+        circle_f9495e02345b4ac2a9672f31f0e9f5d9.bindPopup(popup_319bf6044ab5d452790095077b604899)
+        ;
+
+        
+    
+    
+            circle_f9495e02345b4ac2a9672f31f0e9f5d9.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 147 votos (56.98%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_39ca402021e8c19fb568d1358b7e1145 = L.circle(
+                [-21.1397, -44.2605],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.5228, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 46.09772228646443, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_b4a17d273bc369b4c199a4a86998b961 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f0568df0b56e05f6e7750f47660b4a4f = $(`<div id="html_f0568df0b56e05f6e7750f47660b4a4f" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SEÇÃO ESPECIAL - UFSJ CAMPUS SANTO ANTONIO<br><b>Votos:</b> 85 (37.28%)<br><b>Seções:</b> 203</div>`)[0];
+                popup_b4a17d273bc369b4c199a4a86998b961.setContent(html_f0568df0b56e05f6e7750f47660b4a4f);
+            
+        
+
+        circle_39ca402021e8c19fb568d1358b7e1145.bindPopup(popup_b4a17d273bc369b4c199a4a86998b961)
+        ;
+
+        
+    
+    
+            circle_39ca402021e8c19fb568d1358b7e1145.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 85 votos (37.28%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_63e75f74142e4052901b1ee835f08fb1 = L.circle(
+                [-21.1376, -44.2538],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.5544, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 77.62087348130012, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_13f0a7b2c5bbcb83d76a6347d987abff = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d37e960e013df1bc617dbe720483fba0 = $(`<div id="html_d37e960e013df1bc617dbe720483fba0" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> SOCIEDADE SINFONICA<br><b>Votos:</b> 241 (40.44%)<br><b>Seções:</b> 80, 79</div>`)[0];
+                popup_13f0a7b2c5bbcb83d76a6347d987abff.setContent(html_d37e960e013df1bc617dbe720483fba0);
+            
+        
+
+        circle_63e75f74142e4052901b1ee835f08fb1.bindPopup(popup_13f0a7b2c5bbcb83d76a6347d987abff)
+        ;
+
+        
+    
+    
+            circle_63e75f74142e4052901b1ee835f08fb1.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 241 votos (40.44%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_d86fcaaf83e737ace0a1592b6c95607b = L.circle(
+                [-21.1383, -44.2611],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6022, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 107.12142642814274, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_fea707d50d75877a2d919db6a5d0bb1d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_66db2f561c22cb7bd423a2d55d30af05 = $(`<div id="html_66db2f561c22cb7bd423a2d55d30af05" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> UFSJ  - CAMPUS SANTO ANTONIO<br><b>Votos:</b> 459 (45.22%)<br><b>Seções:</b> 75, 76, 77, 78, 56</div>`)[0];
+                popup_fea707d50d75877a2d919db6a5d0bb1d.setContent(html_66db2f561c22cb7bd423a2d55d30af05);
+            
+        
+
+        circle_d86fcaaf83e737ace0a1592b6c95607b.bindPopup(popup_fea707d50d75877a2d919db6a5d0bb1d)
+        ;
+
+        
+    
+    
+            circle_d86fcaaf83e737ace0a1592b6c95607b.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 459 votos (45.22%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_2e13ce8d9a024662f809266759fc96d0 = L.circle(
+                [-21.1046, -44.2497],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6674, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 54.54356057317857, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_aa7a6082fc877e1affd6d664b40addcd = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_66c9d673b0d3011d146d1ca413ba515c = $(`<div id="html_66c9d673b0d3011d146d1ca413ba515c" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> UFSJ - CAMPUS CTAN<br><b style="color: #fca503;">Votos: 119 (51.74%)</b><br><b>Seções:</b> 156</div>`)[0];
+                popup_aa7a6082fc877e1affd6d664b40addcd.setContent(html_66c9d673b0d3011d146d1ca413ba515c);
+            
+        
+
+        circle_2e13ce8d9a024662f809266759fc96d0.bindPopup(popup_aa7a6082fc877e1affd6d664b40addcd)
+        ;
+
+        
+    
+    
+            circle_2e13ce8d9a024662f809266759fc96d0.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 119 votos (51.74%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_a5d00241ae2580a50cd6e75d8a8f1182 = L.circle(
+                [-21.1245, -44.251],
+                {"bubblingMouseEvents": true, "color": "#0c7a0a", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.5361, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 135.92277219068188, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_54c9379087c18798a759118ebb76da34 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a2e7ca5745ab0cb0f3cba888474d29d4 = $(`<div id="html_a2e7ca5745ab0cb0f3cba888474d29d4" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> UFSJ - CAMPUS DOM BOSCO<br><b>Votos:</b> 739 (38.61%)<br><b>Seções:</b> 133, 134, 149, 345, 125, 126, 127</div>`)[0];
+                popup_54c9379087c18798a759118ebb76da34.setContent(html_a2e7ca5745ab0cb0f3cba888474d29d4);
+            
+        
+
+        circle_a5d00241ae2580a50cd6e75d8a8f1182.bindPopup(popup_54c9379087c18798a759118ebb76da34)
+        ;
+
+        
+    
+    
+            circle_a5d00241ae2580a50cd6e75d8a8f1182.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 739 votos (38.61%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_31b5dd237980dee1d14b8ebdf519d283 = L.circle(
+                [-21.1326, -44.2606],
+                {"bubblingMouseEvents": true, "color": "#fca503", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#0c7a0a", "fillOpacity": 0.6363, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 72.97259759663211, "stroke": true, "weight": 3}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+        var popup_0c83d2b2b577cffec8dddae480eff264 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8367dd810612b98ce138e7a9d62bbe4f = $(`<div id="html_8367dd810612b98ce138e7a9d62bbe4f" style="width: 100.0%; height: 100.0%;"><h3 style="color: #0c7a0a;"><b>Flavio Bolsonaro</b></h3><br><b>Local:</b> UNIDADE REGIONAL DE SAÚDE (ANTIGO CENTRO DE SAÚDE)<br><b style="color: #fca503;">Votos: 213 (48.63%)</b><br><b>Seções:</b> 181, 182</div>`)[0];
+                popup_0c83d2b2b577cffec8dddae480eff264.setContent(html_8367dd810612b98ce138e7a9d62bbe4f);
+            
+        
+
+        circle_31b5dd237980dee1d14b8ebdf519d283.bindPopup(popup_0c83d2b2b577cffec8dddae480eff264)
+        ;
+
+        
+    
+    
+            circle_31b5dd237980dee1d14b8ebdf519d283.bindTooltip(
+                `<div>
+                     Flavio Bolsonaro: 213 votos (48.63%)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            map_666284a3540b6d7b8048c580ed1b8e82.sync(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+            map_ef2f8eaf87f46ecd10588d1ab3d3872d.sync(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+            L.control.fullscreen(
+                {
+  "position": "topright",
+  "title": "Entrar no Modo Tela Cheia",
+  "titleCancel": "Sair do Modo Tela Cheia",
+  "forceSeparateButton": true,
+}
+            ).addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+    
+            tile_layer_8639f492288bc0e5c66cd13b890d70cb.addTo(map_666284a3540b6d7b8048c580ed1b8e82);
+        
+    
+            tile_layer_d48d944410d6aea6137536f1eade5126.addTo(map_ef2f8eaf87f46ecd10588d1ab3d3872d);
+        
+</script>
+</html>
